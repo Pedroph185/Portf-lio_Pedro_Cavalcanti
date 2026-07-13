@@ -32,32 +32,32 @@
       position: relative;
     }
 
-    /* ===== BADGE DO LINKEDIN NA LATERAL SUPERIOR ===== */
+    /* ===== BADGE DO LINKEDIN - POSIÇÃO FIXA ===== */
     .linkedin-badge-side {
-      position: absolute;
-      top: -10px;
-      right: -10px;
-      z-index: 100;
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
       background: #161b22;
       border-radius: 16px;
       padding: 0.8rem;
       border: 1px solid #30363d;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.8);
       transition: 0.3s;
       min-width: 200px;
-      max-width: 280px;
+      max-width: 260px;
     }
 
     .linkedin-badge-side:hover {
-      transform: scale(1.02);
+      transform: scale(1.03);
       border-color: #1f6feb;
-      box-shadow: 0 0 30px rgba(31,111,235,0.2);
+      box-shadow: 0 0 30px rgba(31,111,235,0.3);
     }
 
     /* ===== FORÇAR BADGE COMPLETO ===== */
     .badge-base {
       width: 100% !important;
-      min-width: 200px !important;
+      min-width: 180px !important;
     }
 
     .badge-base .LI-profile-badge {
@@ -71,21 +71,21 @@
 
     .badge-base .LI-profile-badge .LI-profile-badge__avatar {
       display: block !important;
-      width: 60px !important;
-      height: 60px !important;
-      margin: 0 auto 8px !important;
+      width: 56px !important;
+      height: 56px !important;
+      margin: 0 auto 6px !important;
     }
 
     .badge-base .LI-profile-badge .LI-profile-badge__name {
       display: block !important;
-      font-size: 14px !important;
+      font-size: 13px !important;
       font-weight: 600 !important;
       text-align: center !important;
     }
 
     .badge-base .LI-profile-badge .LI-profile-badge__headline {
       display: block !important;
-      font-size: 12px !important;
+      font-size: 11px !important;
       text-align: center !important;
       color: #8b949e !important;
     }
@@ -93,7 +93,7 @@
     .badge-base .LI-profile-badge .LI-profile-badge__follow {
       display: block !important;
       text-align: center !important;
-      margin-top: 8px !important;
+      margin-top: 6px !important;
     }
 
     /* ===== CARD PRINCIPAL ===== */
@@ -561,14 +561,15 @@
   </style>
 </head>
 <body>
-<div class="container">
-  <!-- ===== BADGE DO LINKEDIN NA LATERAL SUPERIOR ===== -->
-  <div class="linkedin-badge-side">
-    <div class="badge-base LI-profile-badge" data-locale="pt_BR" data-size="large" data-theme="dark" data-type="VERTICAL" data-vanity="pedro-cavalcanti-23a250334" data-version="v1">
-      <a class="badge-base__link LI-profile-badge__link" href="https://br.linkedin.com/in/pedro-cavalcanti-23a250334/pt?trk=profile-badge">Pedro Cavalcanti</a>
-    </div>
-  </div>
 
+<!-- ===== BADGE DO LINKEDIN - POSIÇÃO FIXA (fora do container) ===== -->
+<div class="linkedin-badge-side">
+  <div class="badge-base LI-profile-badge" data-locale="pt_BR" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="pedro-cavalcanti-23a250334" data-version="v1">
+    <a class="badge-base__link LI-profile-badge__link" href="https://br.linkedin.com/in/pedro-cavalcanti-23a250334/pt?trk=profile-badge">Pedro Cavalcanti</a>
+  </div>
+</div>
+
+<div class="container">
   <div class="card">
 
     <!-- ===== HEADER COM FOTO EM CÍRCULO ===== -->
