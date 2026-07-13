@@ -38,6 +38,20 @@
       padding: 2rem 2rem 2.5rem;
       box-shadow: 0 8px 24px rgba(0,0,0,0.6);
       border: 1px solid #30363d;
+      opacity: 0;
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    /* ===== ANIMAÇÃO DE ENTRADA ===== */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     /* ===== HEADER COM FOTO EM CÍRCULO ===== */
@@ -63,6 +77,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      animation: float 4s ease-in-out infinite;
     }
 
     .avatar img {
@@ -70,6 +85,12 @@
       height: 100%;
       object-fit: cover;
       border-radius: 50%;
+    }
+
+    /* ===== ANIMAÇÃO FLUTUANTE ===== */
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
     }
 
     .header-text h1 {
@@ -80,6 +101,21 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
+      overflow: hidden;
+      border-right: 3px solid #58a6ff;
+      white-space: nowrap;
+      animation: typing 3s steps(30) 0.5s forwards, blink 0.8s step-end infinite;
+      max-width: 0;
+      display: inline-block;
+    }
+
+    @keyframes typing {
+      from { max-width: 0; }
+      to { max-width: 100%; }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
     }
 
     .header-text .badge {
@@ -92,6 +128,12 @@
       border-radius: 20px;
       margin-top: 0.25rem;
       box-shadow: 0 0 8px rgba(31,111,235,0.3);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
     }
 
     .header-text p {
@@ -107,6 +149,12 @@
       border-radius: 16px;
       border-left: 4px solid #1f6feb;
       margin-bottom: 2rem;
+      transition: all 0.3s ease;
+    }
+
+    .intro:hover {
+      border-left-color: #58a6ff;
+      box-shadow: 0 0 20px rgba(31,111,235,0.1);
     }
 
     .intro p {
@@ -129,6 +177,8 @@
       color: #f0f6fc;
       border-bottom: 1px solid #30363d;
       padding-bottom: 0.5rem;
+      opacity: 0;
+      animation: fadeInUp 0.6s ease 0.3s forwards;
     }
 
     .section-title i {
@@ -152,19 +202,37 @@
       font-weight: 500;
       color: #c9d1d9;
       border: 1px solid #30363d;
-      transition: 0.15s;
+      transition: all 0.3s ease;
+      cursor: default;
+      opacity: 0;
+      animation: fadeInUp 0.4s ease forwards;
     }
+
+    .tech-tag:nth-child(1) { animation-delay: 0.1s; }
+    .tech-tag:nth-child(2) { animation-delay: 0.15s; }
+    .tech-tag:nth-child(3) { animation-delay: 0.2s; }
+    .tech-tag:nth-child(4) { animation-delay: 0.25s; }
+    .tech-tag:nth-child(5) { animation-delay: 0.3s; }
+    .tech-tag:nth-child(6) { animation-delay: 0.35s; }
+    .tech-tag:nth-child(7) { animation-delay: 0.4s; }
+    .tech-tag:nth-child(8) { animation-delay: 0.45s; }
 
     .tech-tag i {
       margin-right: 6px;
       color: #58a6ff;
+      transition: all 0.3s ease;
     }
 
     .tech-tag:hover {
       background: #1f6feb;
       color: #fff;
       border-color: #1f6feb;
-      transform: scale(1.02);
+      transform: scale(1.08) translateY(-2px);
+      box-shadow: 0 6px 20px rgba(31,111,235,0.3);
+    }
+
+    .tech-tag:hover i {
+      color: #fff;
     }
 
     /* ===== LISTAS ===== */
@@ -187,18 +255,33 @@
       font-size: 0.95rem;
       color: #c9d1d9;
       width: fit-content;
-      transition: 0.1s;
+      transition: all 0.3s ease;
+      opacity: 0;
+      animation: fadeInUp 0.4s ease forwards;
     }
+
+    .study-list li:nth-child(1) { animation-delay: 0.1s; }
+    .study-list li:nth-child(2) { animation-delay: 0.2s; }
+    .study-list li:nth-child(3) { animation-delay: 0.3s; }
+    .study-list li:nth-child(4) { animation-delay: 0.4s; }
+    .study-list li:nth-child(5) { animation-delay: 0.5s; }
 
     .study-list li i {
       color: #58a6ff;
       width: 1.2rem;
       text-align: center;
+      transition: all 0.3s ease;
     }
 
     .study-list li:hover {
       border-color: #58a6ff;
       background: #161b22;
+      transform: translateX(6px);
+      box-shadow: 0 0 20px rgba(31,111,235,0.1);
+    }
+
+    .study-list li:hover i {
+      color: #f0f6fc;
     }
 
     /* ===== PROJETOS ===== */
@@ -214,13 +297,20 @@
       border: 1px solid #30363d;
       border-radius: 16px;
       padding: 1rem 1.2rem;
-      transition: 0.2s;
+      transition: all 0.3s ease;
+      opacity: 0;
+      animation: fadeInUp 0.4s ease forwards;
     }
+
+    .project-card:nth-child(1) { animation-delay: 0.1s; }
+    .project-card:nth-child(2) { animation-delay: 0.2s; }
+    .project-card:nth-child(3) { animation-delay: 0.3s; }
+    .project-card:nth-child(4) { animation-delay: 0.4s; }
 
     .project-card:hover {
       border-color: #58a6ff;
-      transform: translateY(-3px);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+      transform: translateY(-6px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.5);
     }
 
     .project-card h4 {
@@ -235,6 +325,11 @@
     .project-card h4 i {
       color: #58a6ff;
       font-size: 0.9rem;
+      transition: all 0.3s ease;
+    }
+
+    .project-card:hover h4 i {
+      transform: rotate(10deg) scale(1.1);
     }
 
     .project-card p {
@@ -253,11 +348,13 @@
     .project-card .repo-icon i {
       margin-right: 6px;
       color: #58a6ff;
+      transition: all 0.3s ease;
     }
 
     .project-card .repo-icon a {
       color: #58a6ff;
       text-decoration: none;
+      transition: all 0.3s ease;
     }
 
     .project-card .repo-icon a:hover {
@@ -272,13 +369,16 @@
       border-radius: 16px;
       padding: 1.5rem;
       margin: 1rem 0 1.5rem 0;
-      transition: 0.3s;
+      transition: all 0.4s ease;
       box-shadow: 0 0 30px rgba(31,111,235,0.15);
+      opacity: 0;
+      animation: fadeInUp 0.6s ease 0.2s forwards;
     }
 
     .project-highlight:hover {
-      transform: scale(1.01);
-      box-shadow: 0 0 40px rgba(31,111,235,0.3);
+      transform: translateY(-4px) scale(1.01);
+      box-shadow: 0 0 50px rgba(31,111,235,0.4);
+      border-color: #58a6ff;
     }
 
     .project-highlight h3 {
@@ -290,6 +390,7 @@
     .project-highlight h3 i {
       color: #58a6ff;
       margin-right: 10px;
+      animation: pulse 2s ease-in-out infinite;
     }
 
     .project-highlight p {
@@ -309,6 +410,7 @@
       text-transform: uppercase;
       letter-spacing: 0.5px;
       margin-bottom: 0.8rem;
+      animation: pulse 2s ease-in-out infinite;
     }
 
     .project-highlight .btn-demo {
@@ -321,7 +423,7 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      transition: 0.2s;
+      transition: all 0.3s ease;
       border: 1px solid #1f6feb;
     }
 
@@ -329,10 +431,17 @@
       background: transparent;
       color: #58a6ff;
       border-color: #58a6ff;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(31,111,235,0.3);
     }
 
     .project-highlight .btn-demo i {
       font-size: 0.9rem;
+      transition: all 0.3s ease;
+    }
+
+    .project-highlight .btn-demo:hover i {
+      transform: translateX(4px);
     }
 
     .project-highlight .repo-link {
@@ -340,6 +449,7 @@
       font-size: 0.85rem;
       margin-left: 1rem;
       text-decoration: none;
+      transition: all 0.3s ease;
     }
 
     .project-highlight .repo-link:hover {
@@ -358,6 +468,12 @@
       border-radius: 40px;
       border: 1px solid #30363d;
       margin-top: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .contact-info:hover {
+      border-color: #58a6ff;
+      box-shadow: 0 0 30px rgba(31,111,235,0.05);
     }
 
     .contact-item {
@@ -366,6 +482,7 @@
       gap: 8px;
       color: #c9d1d9;
       font-size: 0.95rem;
+      transition: all 0.3s ease;
     }
 
     .contact-item i {
@@ -373,13 +490,18 @@
       width: 1.4rem;
       text-align: center;
       font-size: 1.1rem;
+      transition: all 0.3s ease;
+    }
+
+    .contact-item:hover i {
+      transform: scale(1.2) rotate(5deg);
     }
 
     .contact-item a {
       color: #58a6ff;
       text-decoration: none;
       border-bottom: 1px dotted transparent;
-      transition: 0.1s;
+      transition: all 0.3s ease;
     }
 
     .contact-item a:hover {
@@ -398,23 +520,27 @@
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      transition: 0.15s;
+      transition: all 0.3s ease;
       margin-top: 0.5rem;
       text-decoration: none;
     }
 
     .btn-github i {
       color: #58a6ff;
+      transition: all 0.3s ease;
     }
 
     .btn-github:hover {
       background: #1f6feb;
       border-color: #1f6feb;
       color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(31,111,235,0.3);
     }
 
     .btn-github:hover i {
       color: #fff;
+      transform: rotate(10deg);
     }
 
     /* ===== BADGE DO LINKEDIN NO FINAL ===== */
@@ -442,6 +568,21 @@
 
     .footer i {
       color: #1f6feb;
+      transition: all 0.3s ease;
+    }
+
+    .footer i.fa-heart {
+      color: #f85149;
+      animation: heartbeat 1.5s ease-in-out infinite;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.3); }
+    }
+
+    .footer:hover i.fa-code {
+      transform: rotate(10deg);
     }
 
     /* ===== RESPONSIVO ===== */
@@ -454,6 +595,14 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
+      }
+
+      .header-text h1 {
+        font-size: 1.5rem;
+        animation: none;
+        max-width: 100%;
+        border-right: none;
+        white-space: normal;
       }
 
       .contact-info {
@@ -632,7 +781,7 @@
 
     <!-- ===== FOOTER ===== -->
     <div class="footer">
-      <i class="fas fa-code"></i> desenvolvido com <i class="fas fa-heart" style="color:#f85149;"></i> por Pedro Henrique · 2026
+      <i class="fas fa-code"></i> desenvolvido com <i class="fas fa-heart"></i> por Pedro Henrique · 2026
     </div>
 
   </div>
