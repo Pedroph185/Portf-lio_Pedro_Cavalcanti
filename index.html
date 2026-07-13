@@ -44,7 +44,8 @@
       border: 1px solid #30363d;
       box-shadow: 0 8px 24px rgba(0,0,0,0.6);
       transition: 0.3s;
-      max-width: 260px;
+      min-width: 200px;
+      max-width: 280px;
     }
 
     .linkedin-badge-side:hover {
@@ -53,12 +54,46 @@
       box-shadow: 0 0 30px rgba(31,111,235,0.2);
     }
 
-    .linkedin-badge-side .badge-base {
+    /* ===== FORÇAR BADGE COMPLETO ===== */
+    .badge-base {
+      width: 100% !important;
+      min-width: 200px !important;
+    }
+
+    .badge-base .LI-profile-badge {
+      display: block !important;
       width: 100% !important;
     }
 
-    .linkedin-badge-side .badge-base__link {
+    .badge-base .LI-profile-badge .LI-profile-badge__content {
       display: block !important;
+    }
+
+    .badge-base .LI-profile-badge .LI-profile-badge__avatar {
+      display: block !important;
+      width: 60px !important;
+      height: 60px !important;
+      margin: 0 auto 8px !important;
+    }
+
+    .badge-base .LI-profile-badge .LI-profile-badge__name {
+      display: block !important;
+      font-size: 14px !important;
+      font-weight: 600 !important;
+      text-align: center !important;
+    }
+
+    .badge-base .LI-profile-badge .LI-profile-badge__headline {
+      display: block !important;
+      font-size: 12px !important;
+      text-align: center !important;
+      color: #8b949e !important;
+    }
+
+    .badge-base .LI-profile-badge .LI-profile-badge__follow {
+      display: block !important;
+      text-align: center !important;
+      margin-top: 8px !important;
     }
 
     /* ===== CARD PRINCIPAL ===== */
@@ -473,6 +508,7 @@
         justify-content: center;
         width: 100%;
         max-width: 100%;
+        min-width: auto;
       }
 
       .linkedin-badge-side .badge-base {
@@ -526,9 +562,9 @@
 </head>
 <body>
 <div class="container">
-  <!-- ===== BADGE DO LINKEDIN NA LATERAL SUPERIOR (COMPLETO) ===== -->
+  <!-- ===== BADGE DO LINKEDIN NA LATERAL SUPERIOR ===== -->
   <div class="linkedin-badge-side">
-    <div class="badge-base LI-profile-badge" data-locale="pt_BR" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="pedro-cavalcanti-23a250334" data-version="v1">
+    <div class="badge-base LI-profile-badge" data-locale="pt_BR" data-size="large" data-theme="dark" data-type="VERTICAL" data-vanity="pedro-cavalcanti-23a250334" data-version="v1">
       <a class="badge-base__link LI-profile-badge__link" href="https://br.linkedin.com/in/pedro-cavalcanti-23a250334/pt?trk=profile-badge">Pedro Cavalcanti</a>
     </div>
   </div>
@@ -580,7 +616,8 @@
       <li><i class="fas fa-check-circle"></i> Aprendendo SQL</li>
       <li><i class="fas fa-check-circle"></i> Desenvolvendo projetos para portfólio</li>
       <li><i class="fas fa-check-circle"></i> Aprofundando conhecimentos em Linux</li>
-    
+      <li><i class="fas fa-check-circle"></i> Salesforce Trailhead</li>
+    </ul>
 
     <!-- ===== PROJETO EM DESTAQUE (PRINCIPAL) ===== -->
     <div class="section-title">
@@ -668,44 +705,7 @@
 </div>
 
 <!-- ===== SCRIPT DO BADGE DO LINKEDIN ===== -->
-<!-- ===== BADGE DO LINKEDIN NA LATERAL SUPERIOR (COMPLETO) ===== -->
-<div class="linkedin-badge-side">
-  <div class="badge-base LI-profile-badge" data-locale="pt_BR" data-size="large" data-theme="dark" data-type="VERTICAL" data-vanity="pedro-cavalcanti-23a250334" data-version="v1">
-    <a class="badge-base__link LI-profile-badge__link" href="https://br.linkedin.com/in/pedro-cavalcanti-23a250334/pt?trk=profile-badge">Pedro Cavalcanti</a>
-  </div>
-</div>
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
 
-  /* ===== FORÇAR BADGE COMPLETO ===== */
-.badge-base {
-  width: 100% !important;
-  min-width: 200px !important;
-}
-
-.badge-base .LI-profile-badge {
-  display: block !important;
-  width: 100% !important;
-}
-
-.badge-base .LI-profile-badge .LI-profile-badge__content {
-  display: block !important;
-}
-
-.badge-base .LI-profile-badge .LI-profile-badge__avatar {
-  display: block !important;
-  width: 60px !important;
-  height: 60px !important;
-}
-
-.badge-base .LI-profile-badge .LI-profile-badge__name {
-  display: block !important;
-  font-size: 14px !important;
-}
-
-.badge-base .LI-profile-badge .LI-profile-badge__headline {
-  display: block !important;
-  font-size: 12px !important;
-}
-
-.badge-base .LI-profile-badge .LI-profile-badge__follow {
-  display: block !important;
-}
+</body>
+</html>
