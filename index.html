@@ -668,7 +668,44 @@
 </div>
 
 <!-- ===== SCRIPT DO BADGE DO LINKEDIN ===== -->
-<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+<!-- ===== BADGE DO LINKEDIN NA LATERAL SUPERIOR (COMPLETO) ===== -->
+<div class="linkedin-badge-side">
+  <div class="badge-base LI-profile-badge" data-locale="pt_BR" data-size="large" data-theme="dark" data-type="VERTICAL" data-vanity="pedro-cavalcanti-23a250334" data-version="v1">
+    <a class="badge-base__link LI-profile-badge__link" href="https://br.linkedin.com/in/pedro-cavalcanti-23a250334/pt?trk=profile-badge">Pedro Cavalcanti</a>
+  </div>
+</div>
 
-</body>
-</html>
+  /* ===== FORÇAR BADGE COMPLETO ===== */
+.badge-base {
+  width: 100% !important;
+  min-width: 200px !important;
+}
+
+.badge-base .LI-profile-badge {
+  display: block !important;
+  width: 100% !important;
+}
+
+.badge-base .LI-profile-badge .LI-profile-badge__content {
+  display: block !important;
+}
+
+.badge-base .LI-profile-badge .LI-profile-badge__avatar {
+  display: block !important;
+  width: 60px !important;
+  height: 60px !important;
+}
+
+.badge-base .LI-profile-badge .LI-profile-badge__name {
+  display: block !important;
+  font-size: 14px !important;
+}
+
+.badge-base .LI-profile-badge .LI-profile-badge__headline {
+  display: block !important;
+  font-size: 12px !important;
+}
+
+.badge-base .LI-profile-badge .LI-profile-badge__follow {
+  display: block !important;
+}
