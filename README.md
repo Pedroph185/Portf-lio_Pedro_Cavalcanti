@@ -46,7 +46,7 @@ Tenho experiência em atendimento ao cliente, resolução de problemas, melhoria
 Site institucional completo para um laboratório de análises clínicas.  
 Desenvolvido com design moderno, responsivo e foco na experiência do usuário.
 
-[🔗 Ver Projeto]((https://labalmeidaecunha.lovable.app/))
+[🔗 Ver Projeto](https://labalmeidaecunha.lovable.app/)
 
 ---
 
