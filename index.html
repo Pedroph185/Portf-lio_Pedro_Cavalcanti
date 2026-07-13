@@ -417,9 +417,17 @@
       color: #fff;
     }
 
+    /* ===== BADGE DO LINKEDIN ===== */
+    .linkedin-badge-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 1.5rem;
+      padding: 0.5rem;
+    }
+
     /* ===== FOOTER ===== */
     .footer {
-      margin-top: 2rem;
+      margin-top: 1.5rem;
       text-align: center;
       color: #8b949e;
       font-size: 0.85rem;
@@ -605,6 +613,13 @@
       <i class="fab fa-github"></i> Ver portfólio no GitHub
     </a>
 
+    <!-- ===== BADGE DO LINKEDIN ===== -->
+    <div class="linkedin-badge-container">
+      <div class="badge-base LI-profile-badge" data-locale="pt_BR" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="pedro-cavalcanti-23a250334" data-version="v1">
+        <a class="badge-base__link LI-profile-badge__link" href="https://br.linkedin.com/in/pedro-cavalcanti-23a250334/pt?trk=profile-badge">Pedro Cavalcanti</a>
+      </div>
+    </div>
+
     <!-- ===== FOOTER ===== -->
     <div class="footer">
       <i class="fas fa-code"></i> desenvolvido com <i class="fas fa-heart" style="color:#f85149;"></i> por Pedro Henrique · 2026
@@ -612,5 +627,9 @@
 
   </div>
 </div>
+
+<!-- ===== SCRIPT DO BADGE DO LINKEDIN ===== -->
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+
 </body>
 </html>
