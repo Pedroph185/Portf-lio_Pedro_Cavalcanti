@@ -46,7 +46,7 @@ Tenho experiência em atendimento ao cliente, resolução de problemas, melhoria
 Site institucional completo para um laboratório de análises clínicas.  
 Desenvolvido com design moderno, responsivo e foco na experiência do usuário.
 
-[🔗 Ver Projeto](https://pedroph185.github.io/Portf-lio_Pedro_Cavalcanti/)
+[🔗 Ver Projeto]((https://labalmeidaecunha.lovable.app/))
 
 ---
 
