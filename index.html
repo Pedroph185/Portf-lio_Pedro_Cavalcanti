@@ -201,47 +201,151 @@
       background: #161b22;
     }
 
-  <!-- ===== PROJETOS DESTAQUE ===== -->
-<div class="section-title">
-  <i class="fas fa-folder-open"></i> 📂 Projetos em destaque
-</div>
-<div class="project-cards">
-  <div class="project-card">
-    <h4><i class="fas fa-boxes"></i> Controle de Gestão Veterinária</h4>
-    <p>Sistema para gestão de inventário com Python e SQL.</p>
-    <div class="repo-icon">
-      <i class="fab fa-github"></i> 
-      <a href="https://github.com/Pedroph185/Controle-de-Gest-o-Veterin-ria" target="_blank">Ver projeto</a>
-    </div>
-  </div>
-  
-  <div class="project-card">
-    <h4><i class="fas fa-chart-simple"></i> Sistema de Tarefas</h4>
-    <p>Dashboard interativo com dados fictícios e visualizações.</p>
-    <div class="repo-icon">
-      <i class="fab fa-github"></i> 
-      <a href="https://github.com/Pedroph185/Sistema-tarefas" target="_blank">Ver projeto</a>
-    </div>
-  </div>
-  
-  <div class="project-card">
-    <h4><i class="fas fa-robot"></i> Sistema de Finanças</h4>
-    <p>Scripts para tarefas repetitivas e web scraping.</p>
-    <div class="repo-icon">
-      <i class="fab fa-github"></i> 
-      <a href="https://github.com/Pedroph185/Finan-as" target="_blank">Ver projeto</a>
-    </div>
-  </div>
-  
-  <div class="project-card">
-    <h4><i class="fas fa-server"></i> Robozinho WhatsApp BOT</h4>
-    <p>Configuração de serviços e ambiente Linux.</p>
-    <div class="repo-icon">
-      <i class="fab fa-github"></i> 
-      <a href="https://github.com/Pedroph185/whatsapp-bot-pedidos" target="_blank">Ver projeto</a>
-    </div>
-  </div>
-</div>
+    /* ===== PROJETOS ===== */
+    .project-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin: 1rem 0 0.5rem 0;
+    }
+
+    .project-card {
+      background: #0d1117;
+      border: 1px solid #30363d;
+      border-radius: 16px;
+      padding: 1rem 1.2rem;
+      transition: 0.2s;
+    }
+
+    .project-card:hover {
+      border-color: #58a6ff;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+    }
+
+    .project-card h4 {
+      color: #f0f6fc;
+      margin-bottom: 0.3rem;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .project-card h4 i {
+      color: #58a6ff;
+      font-size: 0.9rem;
+    }
+
+    .project-card p {
+      color: #8b949e;
+      font-size: 0.85rem;
+    }
+
+    .project-card .repo-icon {
+      margin-top: 0.5rem;
+      font-size: 0.8rem;
+      color: #8b949e;
+      border-top: 1px solid #21262d;
+      padding-top: 0.5rem;
+    }
+
+    .project-card .repo-icon i {
+      margin-right: 6px;
+      color: #58a6ff;
+    }
+
+    .project-card .repo-icon a {
+      color: #58a6ff;
+      text-decoration: none;
+    }
+
+    .project-card .repo-icon a:hover {
+      text-decoration: underline;
+      color: #f0f6fc;
+    }
+
+    /* ===== CARD DE DESTAQUE (PROJETO PRINCIPAL) ===== */
+    .project-highlight {
+      background: linear-gradient(145deg, #1f6feb, #0d1117);
+      border: 2px solid #1f6feb;
+      border-radius: 16px;
+      padding: 1.5rem;
+      margin: 1rem 0 1.5rem 0;
+      transition: 0.3s;
+      box-shadow: 0 0 30px rgba(31,111,235,0.15);
+    }
+
+    .project-highlight:hover {
+      transform: scale(1.01);
+      box-shadow: 0 0 40px rgba(31,111,235,0.3);
+    }
+
+    .project-highlight h3 {
+      font-size: 1.4rem;
+      color: #f0f6fc;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-highlight h3 i {
+      color: #58a6ff;
+      margin-right: 10px;
+    }
+
+    .project-highlight p {
+      color: #c9d1d9;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .project-highlight .highlight-badge {
+      display: inline-block;
+      background: #1f6feb;
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.2rem 0.8rem;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.8rem;
+    }
+
+    .project-highlight .btn-demo {
+      background: #1f6feb;
+      color: #fff;
+      padding: 0.5rem 1.5rem;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: 0.2s;
+      border: 1px solid #1f6feb;
+    }
+
+    .project-highlight .btn-demo:hover {
+      background: transparent;
+      color: #58a6ff;
+      border-color: #58a6ff;
+    }
+
+    .project-highlight .btn-demo i {
+      font-size: 0.9rem;
+    }
+
+    .project-highlight .repo-link {
+      color: #8b949e;
+      font-size: 0.85rem;
+      margin-left: 1rem;
+      text-decoration: none;
+    }
+
+    .project-highlight .repo-link:hover {
+      color: #58a6ff;
+      text-decoration: underline;
+    }
 
     /* ===== CONTATO ===== */
     .contact-info {
@@ -353,6 +457,22 @@
       .study-list li, .project-list li {
         width: 100%;
       }
+
+      .project-highlight {
+        padding: 1.2rem;
+      }
+
+      .project-highlight .btn-demo {
+        display: block;
+        text-align: center;
+        margin-top: 0.5rem;
+      }
+
+      .project-highlight .repo-link {
+        display: block;
+        margin-left: 0;
+        margin-top: 0.5rem;
+      }
     }
   </style>
 </head>
@@ -408,40 +528,74 @@
       <li><i class="fas fa-check-circle"></i> Salesforce Trailhead</li>
     </ul>
 
-    <!-- ===== PROJETOS DESTAQUE ===== -->
+    <!-- ===== PROJETO EM DESTAQUE (PRINCIPAL) ===== -->
     <div class="section-title">
-      <i class="fas fa-folder-open"></i> 📂 Projetos em destaque
+      <i class="fas fa-star" style="color:#f85149;"></i> ⭐ Projeto em Destaque
+    </div>
+
+    <div class="project-highlight">
+      <span class="highlight-badge"><i class="fas fa-crown"></i> Melhor projeto</span>
+      <h3><i class="fas fa-globe"></i> Lab Almeida e Cunha</h3>
+      <p>Site institucional completo para uma clínica veterinária. Desenvolvido com design moderno, responsivo e foco na experiência do usuário. Este é o meu melhor trabalho até agora!</p>
+      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem;">
+        <a href="https://labalmeidaecunha.lovable.app/" target="_blank" class="btn-demo">
+          <i class="fas fa-external-link-alt"></i> Ver site ao vivo
+        </a>
+        <a href="https://github.com/Pedroph185" target="_blank" class="repo-link">
+          <i class="fab fa-github"></i> Ver código
+        </a>
+      </div>
+    </div>
+
+    <!-- ===== PROJETOS EM DESTAQUE ===== -->
+    <div class="section-title">
+      <i class="fas fa-folder-open"></i> 📂 Outros Projetos
     </div>
     <div class="project-cards">
       <div class="project-card">
-        <h4><i class="fas fa-boxes"></i> Controle de Estoque</h4>
+        <h4><i class="fas fa-boxes"></i> Controle de Gestão Veterinária</h4>
         <p>Sistema para gestão de inventário com Python e SQL.</p>
-        <div class="repo-icon"><i class="fab fa-github"></i> em breve</div>
+        <div class="repo-icon">
+          <i class="fab fa-github"></i> 
+          <a href="https://github.com/Pedroph185/Controle-de-Gest-o-Veterin-ria" target="_blank">Ver projeto</a>
+        </div>
       </div>
+
       <div class="project-card">
-        <h4><i class="fas fa-chart-simple"></i> Painel de Vendas</h4>
-        <p>Dashboard interativo com dados fictícios e visualizações.</p>
-        <div class="repo-icon"><i class="fab fa-github"></i> em breve</div>
+        <h4><i class="fas fa-tasks"></i> Sistema de Tarefas</h4>
+        <p>Dashboard interativo para gerenciamento de tarefas.</p>
+        <div class="repo-icon">
+          <i class="fab fa-github"></i> 
+          <a href="https://github.com/Pedroph185/Sistema-tarefas" target="_blank">Ver projeto</a>
+        </div>
       </div>
+
       <div class="project-card">
-        <h4><i class="fas fa-robot"></i> Automações Python</h4>
-        <p>Scripts para tarefas repetitivas e web scraping.</p>
-        <div class="repo-icon"><i class="fab fa-github"></i> em breve</div>
+        <h4><i class="fas fa-coins"></i> Sistema de Finanças</h4>
+        <p>Controle financeiro pessoal com Python e SQL.</p>
+        <div class="repo-icon">
+          <i class="fab fa-github"></i> 
+          <a href="https://github.com/Pedroph185/Finan-as" target="_blank">Ver projeto</a>
+        </div>
       </div>
+
       <div class="project-card">
-        <h4><i class="fas fa-server"></i> Laboratório Linux</h4>
-        <p>Configuração de serviços e ambiente Linux.</p>
-        <div class="repo-icon"><i class="fab fa-github"></i> em breve</div>
+        <h4><i class="fab fa-whatsapp"></i> Robozinho WhatsApp BOT</h4>
+        <p>Bot automatizado para WhatsApp com Python.</p>
+        <div class="repo-icon">
+          <i class="fab fa-github"></i> 
+          <a href="https://github.com/Pedroph185/whatsapp-bot-pedidos" target="_blank">Ver projeto</a>
+        </div>
       </div>
     </div>
 
     <!-- ===== LISTA DE PROJETOS ===== -->
     <ul class="project-list" style="margin-top:0.5rem;">
-      <li><i class="fas fa-code-branch"></i> Sistema de Controle de Estoque</li>
-      <li><i class="fas fa-code-branch"></i> Painel de Vendas</li>
-      <li><i class="fas fa-code-branch"></i> Automações em Python</li>
-      <li><i class="fas fa-code-branch"></i> Laboratório Linux</li>
-      <li><i class="fas fa-code-branch"></i> Projetos de Redes</li>
+      <li><i class="fas fa-code-branch"></i> Controle de Gestão Veterinária</li>
+      <li><i class="fas fa-code-branch"></i> Sistema de Tarefas</li>
+      <li><i class="fas fa-code-branch"></i> Sistema de Finanças</li>
+      <li><i class="fas fa-code-branch"></i> Robozinho WhatsApp BOT</li>
+      <li><i class="fas fa-code-branch"></i> Lab Almeida e Cunha</li>
     </ul>
 
     <!-- ===== CONTATO ===== -->
