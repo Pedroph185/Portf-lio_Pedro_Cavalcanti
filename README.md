@@ -56,7 +56,7 @@ Este é o meu portfólio pessoal, desenvolvido para mostrar minha evolução com
 
 ## 🌐 Acesse o site
 
-🔗 **[pedroph185.github.io/portfolio](https://pedroph185.github.io/portfolio/)**
+🔗 **[pedroph185.github.io/portfolio](https://https://pedroph185.github.io/Portf-lio_Pedro_Cavalcanti/)**
 
 ---
 
