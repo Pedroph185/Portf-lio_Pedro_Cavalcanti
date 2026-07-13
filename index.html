@@ -6,7 +6,6 @@
   <title>Pedro Henrique Cavalcanti · Portfólio</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
-  
     /* ===== RESET ===== */
     * {
       margin: 0;
@@ -41,32 +40,36 @@
       border: 1px solid #30363d;
     }
 
-    /* ===== HEADER ===== */
-   <!-- ===== HEADER COM FOTO ===== -->
-<div class="header">
-  <div class="avatar">
-    <img src="LmLlkp1.jpeg" alt="Pedro Henrique">
-  </div>
-  <div class="header-text">
-    <h1>Pedro Henrique Cavalcanti</h1>
-    <span class="badge">👨‍💻 Estudante · Redes de Computadores</span>
-    <p><i class="fas fa-map-pin" style="color:#58a6ff; margin-right:6px;"></i>São Paulo, Brasil</p>
-  </div>
-</div>
+    /* ===== HEADER COM FOTO ===== */
+    .header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid #30363d;
+      padding-bottom: 1.5rem;
+    }
 
     .avatar {
-      background: linear-gradient(145deg, #1f6feb, #58a6ff);
-      width: 80px;
-      height: 80px;
+      background: transparent;
+      width: 100px;
+      height: 100px;
       border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid #1f6feb;
+      box-shadow: 0 0 20px rgba(31,111,235,0.3);
+      flex-shrink: 0;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 2.4rem;
-      font-weight: 600;
-      color: #0d1117;
-      box-shadow: 0 0 0 3px #30363d;
-      flex-shrink: 0;
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
     }
 
     .header-text h1 {
@@ -88,7 +91,6 @@
       padding: 0.2rem 1rem;
       border-radius: 20px;
       margin-top: 0.25rem;
-      letter-spacing: 0.3px;
       box-shadow: 0 0 8px rgba(31,111,235,0.3);
     }
 
@@ -345,7 +347,8 @@
 
       .header {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
+        text-align: center;
       }
 
       .contact-info {
@@ -358,6 +361,10 @@
       .project-cards {
         grid-template-columns: 1fr;
       }
+
+      .study-list li, .project-list li {
+        width: 100%;
+      }
     }
   </style>
 </head>
@@ -365,11 +372,12 @@
 <div class="container">
   <div class="card">
 
-    <!-- ===== HEADER ===== -->
+    <!-- ===== HEADER COM FOTO ===== -->
     <div class="header">
       <div class="avatar">
-  <img src="https://i.imgur.com/LmLlkp1.jpeg" alt="Pedro Henrique">
-</div>
+        <img src="https://i.imgur.com/LmLlkp1.jpeg" alt="Pedro Henrique">
+      </div>
+      <div class="header-text">
         <h1>Pedro Henrique Cavalcanti</h1>
         <span class="badge">👨‍💻 Estudante · Redes de Computadores</span>
         <p><i class="fas fa-map-pin" style="color:#58a6ff; margin-right:6px;"></i>São Paulo, Brasil</p>
