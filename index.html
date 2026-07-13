@@ -201,59 +201,47 @@
       background: #161b22;
     }
 
-    /* ===== PROJETOS ===== */
-    .project-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-      margin: 1rem 0 0.5rem 0;
-    }
-
-    .project-card {
-      background: #0d1117;
-      border: 1px solid #30363d;
-      border-radius: 16px;
-      padding: 1rem 1.2rem;
-      transition: 0.2s;
-    }
-
-    .project-card:hover {
-      border-color: #58a6ff;
-      transform: translateY(-3px);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.4);
-    }
-
-    .project-card h4 {
-      color: #f0f6fc;
-      margin-bottom: 0.3rem;
-      font-size: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .project-card h4 i {
-      color: #58a6ff;
-      font-size: 0.9rem;
-    }
-
-    .project-card p {
-      color: #8b949e;
-      font-size: 0.85rem;
-    }
-
-    .project-card .repo-icon {
-      margin-top: 0.5rem;
-      font-size: 0.8rem;
-      color: #8b949e;
-      border-top: 1px solid #21262d;
-      padding-top: 0.5rem;
-    }
-
-    .project-card .repo-icon i {
-      margin-right: 6px;
-      color: #58a6ff;
-    }
+  <!-- ===== PROJETOS DESTAQUE ===== -->
+<div class="section-title">
+  <i class="fas fa-folder-open"></i> 📂 Projetos em destaque
+</div>
+<div class="project-cards">
+  <div class="project-card">
+    <h4><i class="fas fa-boxes"></i> Controle de Gestão Veterinária</h4>
+    <p>Sistema para gestão de inventário com Python e SQL.</p>
+    <div class="repo-icon">
+      <i class="fab fa-github"></i> 
+      <a href="https://github.com/Pedroph185/Controle-de-Gest-o-Veterin-ria" target="_blank">Ver projeto</a>
+    </div>
+  </div>
+  
+  <div class="project-card">
+    <h4><i class="fas fa-chart-simple"></i> Sistema de Tarefas</h4>
+    <p>Dashboard interativo com dados fictícios e visualizações.</p>
+    <div class="repo-icon">
+      <i class="fab fa-github"></i> 
+      <a href="https://github.com/Pedroph185/Sistema-tarefas" target="_blank">Ver projeto</a>
+    </div>
+  </div>
+  
+  <div class="project-card">
+    <h4><i class="fas fa-robot"></i> Sistema de Finanças</h4>
+    <p>Scripts para tarefas repetitivas e web scraping.</p>
+    <div class="repo-icon">
+      <i class="fab fa-github"></i> 
+      <a href="https://github.com/Pedroph185/Finan-as" target="_blank">Ver projeto</a>
+    </div>
+  </div>
+  
+  <div class="project-card">
+    <h4><i class="fas fa-server"></i> Robozinho WhatsApp BOT</h4>
+    <p>Configuração de serviços e ambiente Linux.</p>
+    <div class="repo-icon">
+      <i class="fab fa-github"></i> 
+      <a href="https://github.com/Pedroph185/whatsapp-bot-pedidos" target="_blank">Ver projeto</a>
+    </div>
+  </div>
+</div>
 
     /* ===== CONTATO ===== */
     .contact-info {
