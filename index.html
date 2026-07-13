@@ -29,71 +29,6 @@
       max-width: 1000px;
       width: 100%;
       margin: 0 auto;
-      position: relative;
-    }
-
-    /* ===== BADGE DO LINKEDIN - POSIÇÃO FIXA ===== */
-    .linkedin-badge-side {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      z-index: 1000;
-      background: #161b22;
-      border-radius: 16px;
-      padding: 0.8rem;
-      border: 1px solid #30363d;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.8);
-      transition: 0.3s;
-      min-width: 200px;
-      max-width: 260px;
-    }
-
-    .linkedin-badge-side:hover {
-      transform: scale(1.03);
-      border-color: #1f6feb;
-      box-shadow: 0 0 30px rgba(31,111,235,0.3);
-    }
-
-    /* ===== FORÇAR BADGE COMPLETO ===== */
-    .badge-base {
-      width: 100% !important;
-      min-width: 180px !important;
-    }
-
-    .badge-base .LI-profile-badge {
-      display: block !important;
-      width: 100% !important;
-    }
-
-    .badge-base .LI-profile-badge .LI-profile-badge__content {
-      display: block !important;
-    }
-
-    .badge-base .LI-profile-badge .LI-profile-badge__avatar {
-      display: block !important;
-      width: 56px !important;
-      height: 56px !important;
-      margin: 0 auto 6px !important;
-    }
-
-    .badge-base .LI-profile-badge .LI-profile-badge__name {
-      display: block !important;
-      font-size: 13px !important;
-      font-weight: 600 !important;
-      text-align: center !important;
-    }
-
-    .badge-base .LI-profile-badge .LI-profile-badge__headline {
-      display: block !important;
-      font-size: 11px !important;
-      text-align: center !important;
-      color: #8b949e !important;
-    }
-
-    .badge-base .LI-profile-badge .LI-profile-badge__follow {
-      display: block !important;
-      text-align: center !important;
-      margin-top: 6px !important;
     }
 
     /* ===== CARD PRINCIPAL ===== */
@@ -103,7 +38,6 @@
       padding: 2rem 2rem 2.5rem;
       box-shadow: 0 8px 24px rgba(0,0,0,0.6);
       border: 1px solid #30363d;
-      position: relative;
     }
 
     /* ===== HEADER COM FOTO EM CÍRCULO ===== */
@@ -483,9 +417,22 @@
       color: #fff;
     }
 
+    /* ===== BADGE DO LINKEDIN NO FINAL ===== */
+    .linkedin-badge-footer {
+      display: flex;
+      justify-content: center;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #21262d;
+    }
+
+    .linkedin-badge-footer .badge-base {
+      min-width: 200px;
+    }
+
     /* ===== FOOTER ===== */
     .footer {
-      margin-top: 2rem;
+      margin-top: 1.5rem;
       text-align: center;
       color: #8b949e;
       font-size: 0.85rem;
@@ -498,24 +445,6 @@
     }
 
     /* ===== RESPONSIVO ===== */
-    @media (max-width: 768px) {
-      .linkedin-badge-side {
-        position: relative;
-        top: auto;
-        right: auto;
-        margin-bottom: 1rem;
-        display: flex;
-        justify-content: center;
-        width: 100%;
-        max-width: 100%;
-        min-width: auto;
-      }
-
-      .linkedin-badge-side .badge-base {
-        width: auto !important;
-      }
-    }
-
     @media (max-width: 600px) {
       .card {
         padding: 1.5rem 1rem;
@@ -557,18 +486,15 @@
         margin-left: 0;
         margin-top: 0.5rem;
       }
+
+      .linkedin-badge-footer .badge-base {
+        min-width: auto;
+        width: 100% !important;
+      }
     }
   </style>
 </head>
 <body>
-
-<!-- ===== BADGE DO LINKEDIN - POSIÇÃO FIXA (fora do container) ===== -->
-<div class="linkedin-badge-side">
-  <div class="badge-base LI-profile-badge" data-locale="pt_BR" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="pedro-cavalcanti-23a250334" data-version="v1">
-    <a class="badge-base__link LI-profile-badge__link" href="https://br.linkedin.com/in/pedro-cavalcanti-23a250334/pt?trk=profile-badge">Pedro Cavalcanti</a>
-  </div>
-</div>
-
 <div class="container">
   <div class="card">
 
@@ -696,6 +622,13 @@
     <a href="https://github.com/Pedroph185" class="btn-github" target="_blank">
       <i class="fab fa-github"></i> Ver portfólio no GitHub
     </a>
+
+    <!-- ===== BADGE DO LINKEDIN NO FINAL ===== -->
+    <div class="linkedin-badge-footer">
+      <div class="badge-base LI-profile-badge" data-locale="pt_BR" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="pedro-cavalcanti-23a250334" data-version="v1">
+        <a class="badge-base__link LI-profile-badge__link" href="https://br.linkedin.com/in/pedro-cavalcanti-23a250334/pt?trk=profile-badge">Pedro Cavalcanti</a>
+      </div>
+    </div>
 
     <!-- ===== FOOTER ===== -->
     <div class="footer">
