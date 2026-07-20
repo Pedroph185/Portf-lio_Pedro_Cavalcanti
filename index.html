@@ -1,861 +1,789 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pedro Henrique Cavalcanti · Portfólio</title>
 
-  <!-- ===== TÍTULO PARA SEO ===== -->
-  <title>Pedro Henrique Cavalcanti · Portfólio | Analista de TI</title>
-
-  <!-- ===== META TAGS PARA COMPARTILHAMENTO ===== -->
+  <!-- Meta tags para SEO -->
   <meta property="og:title" content="Pedro Henrique Cavalcanti · Portfólio">
   <meta property="og:description" content="Analista de TI | Suporte | Desenvolvedor Júnior">
   <meta property="og:image" content="https://i.imgur.com/LmLlkp1.jpeg">
   <meta property="og:url" content="https://pedroph185.github.io/Portf-lio_Pedro_Cavalcanti/">
-  <meta name="twitter:card" content="summary_large_image">
 
-  <!-- ===== FAVICON (ÍCONE NA ABA) ===== -->
-  <link rel="icon" href="https://i.imgur.com/LmLlkp1.jpeg" type="image/jpeg">
+  <link rel="shortcut icon" href="https://i.imgur.com/LmLlkp1.jpeg" type="image/x-icon">
 
-  <!-- ===== FONT AWESOME ===== -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
-    /* ===== RESET ===== */
+    /* ============================================
+       ESTILOS COMPLETOS (adaptados do template vCard)
+       ============================================ */
+
+    /* ----- RESET ----- */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
+    :root {
+      --bg-gradient-1: #0d1117;
+      --bg-gradient-2: #161b22;
+      --bg-card: #161b22;
+      --border-color: #30363d;
+      --text-primary: #f0f6fc;
+      --text-secondary: #c9d1d9;
+      --text-tertiary: #8b949e;
+      --accent: #1f6feb;
+      --accent-hover: #58a6ff;
+      --shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+    }
+
     body {
-      background: #0d1117;
-      color: #f0f6fc;
-      font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
-      line-height: 1.6;
-      padding: 2rem 1rem;
+      background: var(--bg-gradient-1);
+      color: var(--text-primary);
+      font-family: 'Poppins', sans-serif;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
 
-    .container {
-      max-width: 1000px;
+    /* ----- LAYOUT PRINCIPAL ----- */
+    main {
+      display: flex;
+      gap: 30px;
+      max-width: 1200px;
       width: 100%;
-      margin: 0 auto;
-    }
-
-    /* ===== CARD PRINCIPAL ===== */
-    .card {
-      background: #161b22;
-      border-radius: 24px;
-      padding: 2rem 2rem 2.5rem;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.6);
-      border: 1px solid #30363d;
-      opacity: 0;
-      animation: fadeInUp 0.8s ease forwards;
-    }
-
-    /* ===== ANIMAÇÃO DE ENTRADA ===== */
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* ===== HEADER ===== */
-    .header {
-      display: flex;
       flex-wrap: wrap;
-      align-items: center;
-      gap: 1.5rem;
-      margin-bottom: 2rem;
-      border-bottom: 1px solid #30363d;
-      padding-bottom: 1.5rem;
     }
 
-    .avatar {
-      background: transparent;
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      overflow: hidden;
-      border: 3px solid #1f6feb;
-      box-shadow: 0 0 20px rgba(31,111,235,0.3);
+    /* ----- SIDEBAR ----- */
+    .sidebar {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 30px;
+      width: 280px;
       flex-shrink: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      animation: float 4s ease-in-out infinite;
+      box-shadow: var(--shadow);
+      height: fit-content;
     }
 
-    .avatar img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    .sidebar-info {
+      text-align: center;
+    }
+
+    .avatar-box img {
       border-radius: 50%;
+      border: 3px solid var(--accent);
+      box-shadow: 0 0 20px rgba(31, 111, 235, 0.3);
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
     }
 
-    /* ===== ANIMAÇÃO FLUTUANTE ===== */
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-6px); }
-    }
-
-    .header-text h1 {
-      font-size: 2rem;
+    .name {
+      font-size: 1.5rem;
       font-weight: 600;
-      letter-spacing: -0.5px;
+      margin-top: 10px;
       background: linear-gradient(to right, #f0f6fc, #58a6ff);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      overflow: hidden;
-      border-right: 3px solid #58a6ff;
-      white-space: nowrap;
-      animation: typing 3s steps(30) 0.5s forwards, blink 0.8s step-end infinite;
-      max-width: 0;
-      display: inline-block;
     }
 
-    @keyframes typing {
-      from { max-width: 0; }
-      to { max-width: 100%; }
+    .title {
+      color: var(--accent-hover);
+      font-size: 0.9rem;
+      font-weight: 400;
     }
 
-    @keyframes blink {
-      50% { border-color: transparent; }
+    .separator {
+      margin: 20px 0;
+      border-bottom: 1px solid var(--border-color);
     }
 
-    .header-text .badge {
-      display: inline-block;
-      background: #1f6feb;
-      color: #fff;
-      font-size: 0.75rem;
-      font-weight: 600;
-      padding: 0.2rem 1rem;
-      border-radius: 20px;
-      margin-top: 0.25rem;
-      box-shadow: 0 0 8px rgba(31,111,235,0.3);
-      animation: pulse 2s ease-in-out infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-    }
-
-    .header-text p {
-      color: #8b949e;
-      margin-top: 0.3rem;
-      font-size: 1rem;
-    }
-
-    /* ===== INTRO ===== */
-    .intro {
-      background: #0d1117;
-      padding: 1.2rem 1.5rem;
-      border-radius: 16px;
-      border-left: 4px solid #1f6feb;
-      margin-bottom: 2rem;
-      transition: all 0.3s ease;
-    }
-
-    .intro:hover {
-      border-left-color: #58a6ff;
-      box-shadow: 0 0 20px rgba(31,111,235,0.1);
-    }
-
-    .intro p {
-      color: #c9d1d9;
-      font-size: 1rem;
-    }
-
-    .intro strong {
-      color: #f0f6fc;
-    }
-
-    /* ===== SEÇÕES ===== */
-    .section-title {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 1.3rem;
-      font-weight: 600;
-      margin: 2rem 0 1rem 0;
-      color: #f0f6fc;
-      border-bottom: 1px solid #30363d;
-      padding-bottom: 0.5rem;
-      opacity: 0;
-      animation: fadeInUp 0.6s ease 0.3s forwards;
-    }
-
-    .section-title i {
-      color: #58a6ff;
-      font-size: 1.4rem;
-    }
-
-    /* ===== TECNOLOGIAS ===== */
-    .tech-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem 1rem;
-      margin: 0.5rem 0 0.5rem 0;
-    }
-
-    .tech-tag {
-      background: #21262d;
-      padding: 0.3rem 1rem;
-      border-radius: 30px;
-      font-size: 0.85rem;
-      font-weight: 500;
-      color: #c9d1d9;
-      border: 1px solid #30363d;
-      transition: all 0.3s ease;
-      cursor: default;
-      opacity: 0;
-      animation: fadeInUp 0.4s ease forwards;
-    }
-
-    .tech-tag:nth-child(1) { animation-delay: 0.1s; }
-    .tech-tag:nth-child(2) { animation-delay: 0.15s; }
-    .tech-tag:nth-child(3) { animation-delay: 0.2s; }
-    .tech-tag:nth-child(4) { animation-delay: 0.25s; }
-    .tech-tag:nth-child(5) { animation-delay: 0.3s; }
-    .tech-tag:nth-child(6) { animation-delay: 0.35s; }
-    .tech-tag:nth-child(7) { animation-delay: 0.4s; }
-    .tech-tag:nth-child(8) { animation-delay: 0.45s; }
-
-    .tech-tag i {
-      margin-right: 6px;
-      color: #58a6ff;
-      transition: all 0.3s ease;
-    }
-
-    .tech-tag:hover {
-      background: #1f6feb;
-      color: #fff;
-      border-color: #1f6feb;
-      transform: scale(1.08) translateY(-2px);
-      box-shadow: 0 6px 20px rgba(31,111,235,0.3);
-    }
-
-    .tech-tag:hover i {
-      color: #fff;
-    }
-
-    /* ===== LISTA "EM FOCO" ===== */
-    .study-list {
+    .contacts-list {
       list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.6rem;
-      margin-top: 0.75rem;
-    }
-
-    .study-list li {
-      background: #0d1117;
-      padding: 0.6rem 1.2rem;
-      border-radius: 40px;
-      border: 1px solid #30363d;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 0.95rem;
-      color: #c9d1d9;
-      width: fit-content;
-      transition: all 0.3s ease;
-      opacity: 0;
-      animation: fadeInUp 0.4s ease forwards;
-    }
-
-    .study-list li:nth-child(1) { animation-delay: 0.1s; }
-    .study-list li:nth-child(2) { animation-delay: 0.2s; }
-    .study-list li:nth-child(3) { animation-delay: 0.3s; }
-    .study-list li:nth-child(4) { animation-delay: 0.4s; }
-    .study-list li:nth-child(5) { animation-delay: 0.5s; }
-
-    .study-list li i {
-      color: #58a6ff;
-      width: 1.2rem;
-      text-align: center;
-      transition: all 0.3s ease;
-    }
-
-    .study-list li:hover {
-      border-color: #58a6ff;
-      background: #161b22;
-      transform: translateX(6px);
-      box-shadow: 0 0 20px rgba(31,111,235,0.1);
-    }
-
-    .study-list li:hover i {
-      color: #f0f6fc;
-    }
-
-    /* ===== PROJETOS ===== */
-    .project-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-      margin: 1rem 0 0.5rem 0;
-    }
-
-    .project-card {
-      background: #0d1117;
-      border: 1px solid #30363d;
-      border-radius: 16px;
-      padding: 1rem 1.2rem;
-      transition: all 0.3s ease;
-      opacity: 0;
-      animation: fadeInUp 0.4s ease forwards;
-    }
-
-    .project-card:nth-child(1) { animation-delay: 0.1s; }
-    .project-card:nth-child(2) { animation-delay: 0.2s; }
-    .project-card:nth-child(3) { animation-delay: 0.3s; }
-    .project-card:nth-child(4) { animation-delay: 0.4s; }
-
-    .project-card:hover {
-      border-color: #58a6ff;
-      transform: translateY(-6px);
-      box-shadow: 0 8px 30px rgba(0,0,0,0.5);
-    }
-
-    .project-card h4 {
-      color: #f0f6fc;
-      margin-bottom: 0.3rem;
-      font-size: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .project-card h4 i {
-      color: #58a6ff;
-      font-size: 0.9rem;
-      transition: all 0.3s ease;
-    }
-
-    .project-card:hover h4 i {
-      transform: rotate(10deg) scale(1.1);
-    }
-
-    .project-card p {
-      color: #8b949e;
-      font-size: 0.85rem;
-    }
-
-    .project-card .repo-icon {
-      margin-top: 0.5rem;
-      font-size: 0.8rem;
-      color: #8b949e;
-      border-top: 1px solid #21262d;
-      padding-top: 0.5rem;
-    }
-
-    .project-card .repo-icon i {
-      margin-right: 6px;
-      color: #58a6ff;
-      transition: all 0.3s ease;
-    }
-
-    .project-card .repo-icon a {
-      color: #58a6ff;
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
-
-    .project-card .repo-icon a:hover {
-      text-decoration: underline;
-      color: #f0f6fc;
-    }
-
-    /* ===== CARD DE DESTAQUE ===== */
-    .project-highlight {
-      background: linear-gradient(145deg, #1f6feb, #0d1117);
-      border: 2px solid #1f6feb;
-      border-radius: 16px;
-      padding: 1.5rem;
-      margin: 1rem 0 1.5rem 0;
-      transition: all 0.4s ease;
-      box-shadow: 0 0 30px rgba(31,111,235,0.15);
-      opacity: 0;
-      animation: fadeInUp 0.6s ease 0.2s forwards;
-    }
-
-    .project-highlight:hover {
-      transform: translateY(-4px) scale(1.01);
-      box-shadow: 0 0 50px rgba(31,111,235,0.4);
-      border-color: #58a6ff;
-    }
-
-    .project-highlight h3 {
-      font-size: 1.4rem;
-      color: #f0f6fc;
-      margin-bottom: 0.5rem;
-    }
-
-    .project-highlight h3 i {
-      color: #58a6ff;
-      margin-right: 10px;
-      animation: pulse 2s ease-in-out infinite;
-    }
-
-    .project-highlight p {
-      color: #c9d1d9;
-      font-size: 1rem;
-      margin-bottom: 1rem;
-    }
-
-    .project-highlight .highlight-badge {
-      display: inline-block;
-      background: #1f6feb;
-      color: #fff;
-      font-size: 0.7rem;
-      font-weight: 700;
-      padding: 0.2rem 0.8rem;
-      border-radius: 20px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin-bottom: 0.8rem;
-      animation: pulse 2s ease-in-out infinite;
-    }
-
-    .project-highlight .btn-demo {
-      background: #1f6feb;
-      color: #fff;
-      padding: 0.5rem 1.5rem;
-      border-radius: 40px;
-      text-decoration: none;
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      transition: all 0.3s ease;
-      border: 1px solid #1f6feb;
-    }
-
-    .project-highlight .btn-demo:hover {
-      background: transparent;
-      color: #58a6ff;
-      border-color: #58a6ff;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(31,111,235,0.3);
-    }
-
-    .project-highlight .btn-demo i {
-      font-size: 0.9rem;
-      transition: all 0.3s ease;
-    }
-
-    .project-highlight .btn-demo:hover i {
-      transform: translateX(4px);
-    }
-
-    .project-highlight .repo-link {
-      color: #8b949e;
-      font-size: 0.85rem;
-      margin-left: 1rem;
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
-
-    .project-highlight .repo-link:hover {
-      color: #58a6ff;
-      text-decoration: underline;
-    }
-
-    /* ===== CONTATO ===== */
-    .contact-info {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 1.2rem 1.8rem;
-      background: #0d1117;
-      padding: 1rem 1.5rem;
-      border-radius: 40px;
-      border: 1px solid #30363d;
-      margin-top: 1rem;
-      transition: all 0.3s ease;
-    }
-
-    .contact-info:hover {
-      border-color: #58a6ff;
-      box-shadow: 0 0 30px rgba(31,111,235,0.05);
     }
 
     .contact-item {
       display: flex;
       align-items: center;
-      gap: 8px;
-      color: #c9d1d9;
-      font-size: 0.95rem;
-      transition: all 0.3s ease;
+      gap: 12px;
+      margin-bottom: 12px;
     }
 
-    .contact-item i {
-      color: #58a6ff;
-      width: 1.4rem;
-      text-align: center;
-      font-size: 1.1rem;
-      transition: all 0.3s ease;
-    }
-
-    .contact-item:hover i {
-      transform: scale(1.2) rotate(5deg);
-    }
-
-    .contact-item a {
-      color: #58a6ff;
-      text-decoration: none;
-      border-bottom: 1px dotted transparent;
-      transition: all 0.3s ease;
-    }
-
-    .contact-item a:hover {
-      border-bottom: 1px dotted #58a6ff;
-      color: #f0f6fc;
-    }
-
-    /* ===== BOTÃO GITHUB ===== */
-    .btn-github {
-      background: #21262d;
-      padding: 0.6rem 1.5rem;
-      border-radius: 40px;
-      border: 1px solid #30363d;
-      color: #f0f6fc;
-      font-weight: 500;
-      display: inline-flex;
+    .contact-item .icon-box {
+      background: #0d1117;
+      border-radius: 10px;
+      padding: 8px;
+      display: flex;
       align-items: center;
-      gap: 10px;
-      transition: all 0.3s ease;
-      margin-top: 0.5rem;
+      justify-content: center;
+      min-width: 36px;
+    }
+
+    .contact-item .icon-box ion-icon {
+      font-size: 1.2rem;
+      color: var(--accent);
+    }
+
+    .contact-title {
+      font-size: 0.7rem;
+      color: var(--text-tertiary);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .contact-link {
+      color: var(--text-secondary);
       text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.3s;
     }
 
-    .btn-github i {
-      color: #58a6ff;
-      transition: all 0.3s ease;
+    .contact-link:hover {
+      color: var(--accent-hover);
     }
 
-    .btn-github:hover {
-      background: #1f6feb;
-      border-color: #1f6feb;
-      color: #fff;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(31,111,235,0.3);
-    }
-
-    .btn-github:hover i {
-      color: #fff;
-      transform: rotate(10deg);
-    }
-
-    /* ===== BADGE DO LINKEDIN ===== */
-    .linkedin-badge-footer {
+    .social-list {
       display: flex;
       justify-content: center;
-      margin-top: 2rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid #21262d;
+      gap: 15px;
+      list-style: none;
     }
 
-    .linkedin-badge-footer .badge-base {
-      min-width: 200px;
+    .social-link {
+      color: var(--text-tertiary);
+      font-size: 1.5rem;
+      transition: all 0.3s;
     }
 
-    /* ===== FOOTER ===== */
-    .footer {
-      margin-top: 1.5rem;
-      text-align: center;
-      color: #8b949e;
-      font-size: 0.85rem;
-      border-top: 1px solid #21262d;
-      padding-top: 1.5rem;
-    }
-
-    .footer i {
-      color: #1f6feb;
-      transition: all 0.3s ease;
-    }
-
-    .footer i.fa-heart {
-      color: #f85149;
-      animation: heartbeat 1.5s ease-in-out infinite;
-    }
-
-    @keyframes heartbeat {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.3); }
-    }
-
-    .footer:hover i.fa-code {
-      transform: rotate(10deg);
-    }
-
-    /* ===== BOTÃO VOLTAR AO TOPO ===== */
-    #btnTopo {
-      display: none;
-      position: fixed;
-      bottom: 20px;
-      right: 30px;
-      z-index: 99;
-      border: none;
-      outline: none;
-      background-color: #1f6feb;
-      color: white;
-      cursor: pointer;
-      padding: 15px;
-      border-radius: 50%;
-      font-size: 18px;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(31,111,235,0.3);
-    }
-
-    #btnTopo:hover {
-      background-color: #58a6ff;
+    .social-link:hover {
+      color: var(--accent-hover);
       transform: translateY(-3px);
-      box-shadow: 0 6px 25px rgba(31,111,235,0.5);
     }
 
-    /* ===== RESPONSIVIDADE ===== */
-    @media (max-width: 600px) {
-      .card {
-        padding: 1.5rem 1rem;
-      }
+    /* ----- MAIN CONTENT ----- */
+    .main-content {
+      flex: 1;
+      min-width: 300px;
+    }
 
-      .header {
+    /* ----- NAVBAR ----- */
+    .navbar {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 15px 25px;
+      box-shadow: var(--shadow);
+      margin-bottom: 30px;
+    }
+
+    .navbar-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      list-style: none;
+      justify-content: center;
+    }
+
+    .navbar-link {
+      background: transparent;
+      border: none;
+      color: var(--text-tertiary);
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 500;
+      padding: 8px 16px;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .navbar-link:hover {
+      background: #21262d;
+      color: var(--text-primary);
+    }
+
+    .navbar-link.active {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    /* ----- ARTIGOS (ABAS) ----- */
+    .article {
+      display: none;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .article.active {
+      display: block;
+      animation: fadeIn 0.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .h2 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 10px;
+    }
+
+    .h3 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin: 20px 0 15px;
+    }
+
+    /* ----- TIMELINE ----- */
+    .timeline {
+      margin-bottom: 30px;
+    }
+
+    .timeline-list {
+      list-style: none;
+    }
+
+    .timeline-item {
+      padding-left: 20px;
+      border-left: 2px solid var(--accent);
+      margin-bottom: 20px;
+    }
+
+    .timeline-item h4 {
+      font-weight: 500;
+    }
+
+    .timeline-item span {
+      color: var(--text-tertiary);
+      font-size: 0.85rem;
+    }
+
+    .timeline-text {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      margin-top: 5px;
+    }
+
+    /* ----- SKILLS ----- */
+    .skills-list {
+      list-style: none;
+    }
+
+    .skills-item {
+      margin-bottom: 15px;
+    }
+
+    .title-wrapper {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 5px;
+    }
+
+    .skill-progress-bg {
+      background: #0d1117;
+      border-radius: 10px;
+      height: 8px;
+      overflow: hidden;
+    }
+
+    .skill-progress-fill {
+      height: 100%;
+      background: linear-gradient(to right, var(--accent), var(--accent-hover));
+      border-radius: 10px;
+      transition: width 1.5s ease;
+    }
+
+    /* ----- PROJETOS ----- */
+    .filter-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      list-style: none;
+      margin-bottom: 20px;
+    }
+
+    .filter-item button {
+      background: #0d1117;
+      border: 1px solid var(--border-color);
+      border-radius: 30px;
+      padding: 6px 16px;
+      color: var(--text-secondary);
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .filter-item button.active,
+    .filter-item button:hover {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+
+    .project-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 20px;
+      list-style: none;
+    }
+
+    .project-item {
+      background: #0d1117;
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: all 0.3s;
+    }
+
+    .project-item:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      border-color: var(--accent);
+    }
+
+    .project-item a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .project-item img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    .project-item h3 {
+      font-size: 1rem;
+      padding: 10px 15px 0;
+    }
+
+    .project-item p {
+      color: var(--text-tertiary);
+      font-size: 0.8rem;
+      padding: 0 15px 15px;
+    }
+
+    /* ----- CONTATO ----- */
+    .contact-form .input-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+
+    .form-input {
+      flex: 1;
+      min-width: 200px;
+      padding: 12px 18px;
+      border-radius: 14px;
+      border: 1px solid var(--border-color);
+      background: #0d1117;
+      color: var(--text-primary);
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.9rem;
+      transition: border-color 0.3s;
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+
+    textarea.form-input {
+      min-height: 120px;
+      width: 100%;
+      resize: vertical;
+    }
+
+    .form-btn {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 30px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .form-btn:hover {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(31, 111, 235, 0.4);
+    }
+
+    .form-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    /* ----- RESPONSIVO ----- */
+    @media (max-width: 768px) {
+      main {
         flex-direction: column;
         align-items: center;
-        text-align: center;
       }
 
-      .header-text h1 {
-        font-size: 1.5rem;
-        animation: none;
-        max-width: 100%;
-        border-right: none;
-        white-space: normal;
+      .sidebar {
+        width: 100%;
+        max-width: 400px;
       }
 
-      .contact-info {
-        flex-direction: column;
-        align-items: flex-start;
-        border-radius: 20px;
-        padding: 1rem;
-      }
-
-      .project-cards {
+      .project-list {
         grid-template-columns: 1fr;
       }
 
-      .study-list li {
-        width: 100%;
+      .navbar-list {
+        gap: 5px;
       }
 
-      .project-highlight {
-        padding: 1.2rem;
+      .navbar-link {
+        font-size: 0.75rem;
+        padding: 6px 12px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .sidebar {
+        padding: 20px;
       }
 
-      .project-highlight .btn-demo {
-        display: block;
-        text-align: center;
-        margin-top: 0.5rem;
+      .article {
+        padding: 20px;
       }
 
-      .project-highlight .repo-link {
-        display: block;
-        margin-left: 0;
-        margin-top: 0.5rem;
-      }
-
-      .linkedin-badge-footer .badge-base {
-        min-width: auto;
-        width: 100% !important;
-      }
-
-      #btnTopo {
-        padding: 12px;
-        font-size: 16px;
-        bottom: 15px;
-        right: 15px;
+      .contact-form .input-wrapper {
+        flex-direction: column;
       }
     }
   </style>
 </head>
+
 <body>
-<div class="container">
-  <div class="card">
 
-    <!-- ===== HEADER ===== -->
-    <div class="header">
-      <div class="avatar">
-        <img src="https://i.imgur.com/LmLlkp1.jpeg" alt="Pedro Henrique">
-      </div>
-      <div class="header-text">
-        <h1>Pedro Henrique Cavalcanti</h1>
-        <span class="badge">👨‍💻 Estudante · Redes de Computadores</span>
-        <p><i class="fas fa-map-pin" style="color:#58a6ff; margin-right:6px;"></i>São Paulo, Brasil</p>
-      </div>
-    </div>
+<main>
 
-    <!-- ===== INTRO ===== -->
-    <div class="intro">
-      <p>
-        <i class="fas fa-quote-left" style="color:#58a6ff; margin-right:6px;"></i>
-        <strong>Buscando minha primeira oportunidade como Analista de TI, Suporte, Redes ou Desenvolvedor Júnior.</strong><br>
-        Experiência em atendimento ao cliente, resolução de problemas, melhoria de processos e desenvolvimento de projetos para portfólio.
-      </p>
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="sidebar">
+
+    <div class="sidebar-info">
+      <figure class="avatar-box">
+        <img src="https://i.imgur.com/LmLlkp1.jpeg" alt="Pedro Henrique Cavalcanti">
+      </figure>
+
+      <h1 class="name">Pedro Henrique Cavalcanti</h1>
+      <p class="title">Analista de TI | Suporte | Desenvolvedor Júnior</p>
     </div>
 
-    <!-- ===== TECNOLOGIAS ===== -->
-    <div class="section-title">
-      <i class="fas fa-code"></i> Tecnologias &amp; Ferramentas
-    </div>
-    <div class="tech-grid">
-      <span class="tech-tag"><i class="fab fa-git-alt"></i> Git</span>
-      <span class="tech-tag"><i class="fab fa-github"></i> GitHub</span>
-      <span class="tech-tag"><i class="fab fa-linux"></i> Linux</span>
-      <span class="tech-tag"><i class="fab fa-python"></i> Python</span>
-      <span class="tech-tag"><i class="fas fa-database"></i> SQL</span>
-      <span class="tech-tag"><i class="fab fa-html5"></i> HTML</span>
-      <span class="tech-tag"><i class="fab fa-css3-alt"></i> CSS</span>
-      <span class="tech-tag"><i class="fab fa-salesforce"></i> Salesforce</span>
-    </div>
+    <div class="separator"></div>
 
-    <!-- ===== ESTUDOS ===== -->
-    <div class="section-title">
-      <i class="fas fa-graduation-cap"></i> 📚 Em foco
-    </div>
-    <ul class="study-list">
-      <li><i class="fas fa-check-circle"></i> Estudando Python</li>
-      <li><i class="fas fa-check-circle"></i> Aprendendo SQL</li>
-      <li><i class="fas fa-check-circle"></i> Desenvolvendo projetos para portfólio</li>
-      <li><i class="fas fa-check-circle"></i> Aprofundando conhecimentos em Linux</li>
-      <li><i class="fas fa-check-circle"></i> Salesforce Trailhead</li>
+    <ul class="contacts-list">
+      <li class="contact-item">
+        <div class="icon-box"><ion-icon name="mail-outline"></ion-icon></div>
+        <div>
+          <p class="contact-title">Email</p>
+          <a href="mailto:wirelesspedro@gmail.com" class="contact-link">wirelesspedro@gmail.com</a>
+        </div>
+      </li>
+
+      <li class="contact-item">
+        <div class="icon-box"><ion-icon name="phone-portrait-outline"></ion-icon></div>
+        <div>
+          <p class="contact-title">Telefone</p>
+          <a href="tel:+5511945758256" class="contact-link">(11) 94575-8256</a>
+        </div>
+      </li>
+
+      <li class="contact-item">
+        <div class="icon-box"><ion-icon name="location-outline"></ion-icon></div>
+        <div>
+          <p class="contact-title">Localização</p>
+          <address class="contact-link">São Paulo, Brasil</address>
+        </div>
+      </li>
+
+      <li class="contact-item">
+        <div class="icon-box"><ion-icon name="logo-linkedin"></ion-icon></div>
+        <div>
+          <p class="contact-title">LinkedIn</p>
+          <a href="https://www.linkedin.com/in/pedro-cavalcanti-23a250334/" target="_blank" class="contact-link">Pedro Cavalcanti</a>
+        </div>
+      </li>
+
+      <li class="contact-item">
+        <div class="icon-box"><ion-icon name="logo-github"></ion-icon></div>
+        <div>
+          <p class="contact-title">GitHub</p>
+          <a href="https://github.com/Pedroph185" target="_blank" class="contact-link">Pedroph185</a>
+        </div>
+      </li>
     </ul>
 
-    <!-- ===== PROJETO EM DESTAQUE ===== -->
-    <div class="section-title">
-      <i class="fas fa-star" style="color:#f85149;"></i> ⭐ Projeto em Destaque
-    </div>
-    <div class="project-highlight">
-      <span class="highlight-badge"><i class="fas fa-crown"></i> Melhor projeto</span>
-      <h3><i class="fas fa-flask"></i> Lab Almeida e Cunha</h3>
-      <p>Site institucional completo para um laboratório de análises clínicas. Desenvolvido com design moderno, responsivo e foco na experiência do usuário. Este é o meu melhor trabalho até agora!</p>
-      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem;">
-        <a href="https://labalmeidaecunha.lovable.app/" target="_blank" class="btn-demo">
-          <i class="fas fa-external-link-alt"></i> Ver site ao vivo
-        </a>
-        <a href="https://github.com/Pedroph185" target="_blank" class="repo-link">
-          <i class="fab fa-github"></i> Ver código
-        </a>
-      </div>
-    </div>
+    <div class="separator"></div>
 
-    <!-- ===== OUTROS PROJETOS ===== -->
-    <div class="section-title">
-      <i class="fas fa-folder-open"></i> 📂 Outros Projetos
-    </div>
-    <div class="project-cards">
-      <div class="project-card">
-        <h4><i class="fas fa-boxes"></i> Controle de Gestão Veterinária</h4>
-        <p>Sistema para gestão de inventário com Python e SQL.</p>
-        <div class="repo-icon">
-          <i class="fab fa-github"></i> 
-          <a href="https://github.com/Pedroph185/Controle-de-Gest-o-Veterin-ria" target="_blank">Ver projeto</a>
-        </div>
+    <ul class="social-list">
+      <li><a href="https://www.linkedin.com/in/pedro-cavalcanti-23a250334/" target="_blank" class="social-link"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+      <li><a href="https://github.com/Pedroph185" target="_blank" class="social-link"><ion-icon name="logo-github"></ion-icon></a></li>
+      <li><a href="mailto:wirelesspedro@gmail.com" class="social-link"><ion-icon name="mail-outline"></ion-icon></a></li>
+    </ul>
+  </aside>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <div class="main-content">
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar">
+      <ul class="navbar-list">
+        <li><button class="navbar-link active" data-nav-link="about">Sobre</button></li>
+        <li><button class="navbar-link" data-nav-link="resume">Currículo</button></li>
+        <li><button class="navbar-link" data-nav-link="portfolio">Projetos</button></li>
+        <li><button class="navbar-link" data-nav-link="contact">Contato</button></li>
+      </ul>
+    </nav>
+
+    <!-- ===== SOBRE ===== -->
+    <article class="article active" id="about">
+      <h2 class="h2">Sobre mim</h2>
+      <p style="color: var(--text-secondary); margin-bottom: 20px;">
+        Estudante de Redes de Computadores buscando minha primeira oportunidade como Analista de TI, Suporte, Redes ou Desenvolvedor Júnior.
+        Tenho experiência em atendimento ao cliente, resolução de problemas, melhoria de processos e desenvolvimento de projetos para portfólio.
+      </p>
+
+      <h3 class="h3">Tecnologias & Ferramentas</h3>
+      <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
+        <span style="background: #21262d; padding: 5px 15px; border-radius: 30px; border: 1px solid var(--border-color);">Git</span>
+        <span style="background: #21262d; padding: 5px 15px; border-radius: 30px; border: 1px solid var(--border-color);">GitHub</span>
+        <span style="background: #21262d; padding: 5px 15px; border-radius: 30px; border: 1px solid var(--border-color);">Linux</span>
+        <span style="background: #21262d; padding: 5px 15px; border-radius: 30px; border: 1px solid var(--border-color);">Python</span>
+        <span style="background: #21262d; padding: 5px 15px; border-radius: 30px; border: 1px solid var(--border-color);">SQL</span>
+        <span style="background: #21262d; padding: 5px 15px; border-radius: 30px; border: 1px solid var(--border-color);">HTML</span>
+        <span style="background: #21262d; padding: 5px 15px; border-radius: 30px; border: 1px solid var(--border-color);">CSS</span>
+        <span style="background: #21262d; padding: 5px 15px; border-radius: 30px; border: 1px solid var(--border-color);">Salesforce</span>
       </div>
-      <div class="project-card">
-        <h4><i class="fas fa-tasks"></i> Sistema de Tarefas</h4>
-        <p>Dashboard interativo para gerenciamento de tarefas.</p>
-        <div class="repo-icon">
-          <i class="fab fa-github"></i> 
-          <a href="https://github.com/Pedroph185/Sistema-tarefas" target="_blank">Ver projeto</a>
-        </div>
+
+      <h3 class="h3">📚 Em foco</h3>
+      <ul style="list-style: none; display: flex; flex-wrap: wrap; gap: 10px;">
+        <li style="background: #0d1117; padding: 8px 18px; border-radius: 40px; border: 1px solid var(--border-color);">🐍 Estudando Python</li>
+        <li style="background: #0d1117; padding: 8px 18px; border-radius: 40px; border: 1px solid var(--border-color);">📊 Aprendendo SQL</li>
+        <li style="background: #0d1117; padding: 8px 18px; border-radius: 40px; border: 1px solid var(--border-color);">🚀 Desenvolvendo projetos</li>
+        <li style="background: #0d1117; padding: 8px 18px; border-radius: 40px; border: 1px solid var(--border-color);">🐧 Linux</li>
+        <li style="background: #0d1117; padding: 8px 18px; border-radius: 40px; border: 1px solid var(--border-color);">☁️ Salesforce Trailhead</li>
+      </ul>
+    </article>
+
+    <!-- ===== CURRÍCULO ===== -->
+    <article class="article" id="resume">
+      <h2 class="h2">Currículo</h2>
+
+      <div class="timeline">
+        <h3 class="h3">🎓 Formação</h3>
+        <ul class="timeline-list">
+          <li class="timeline-item">
+            <h4>Tecnologia da Informação</h4>
+            <span>Faculdade FMU · 2024 - 2027 (Cursando)</span>
+            <p class="timeline-text">Foco em redes, suporte técnico e desenvolvimento.</p>
+          </li>
+        </ul>
       </div>
-      <div class="project-card">
-        <h4><i class="fas fa-coins"></i> Sistema de Finanças</h4>
-        <p>Controle financeiro pessoal com Python e SQL.</p>
-        <div class="repo-icon">
-          <i class="fab fa-github"></i> 
-          <a href="https://github.com/Pedroph185/Finan-as" target="_blank">Ver projeto</a>
-        </div>
+
+      <div class="timeline">
+        <h3 class="h3">💼 Experiência</h3>
+        <ul class="timeline-list">
+          <li class="timeline-item">
+            <h4>Agente de Atendimento e Segurança</h4>
+            <span>Viamobilidade · 2021 - 2025</span>
+            <p class="timeline-text">Atendimento consultivo ao público, monitoramento de CFTV com 50+ câmeras, registro de 500+ ocorrências, treinamento de novos colaboradores.</p>
+          </li>
+          <li class="timeline-item">
+            <h4>Atendente</h4>
+            <span>Verzani e Sandrini · 2021</span>
+            <p class="timeline-text">Controle de acesso, cadastro de colaboradores, gestão de dados.</p>
+          </li>
+          <li class="timeline-item">
+            <h4>Design Gráfico</h4>
+            <span>Spatym Produções · 2016 - 2019</span>
+            <p class="timeline-text">Criação de materiais visuais, atendimento a clientes.</p>
+          </li>
+        </ul>
       </div>
-      <div class="project-card">
-        <h4><i class="fab fa-whatsapp"></i> Robozinho WhatsApp BOT</h4>
-        <p>Bot automatizado para WhatsApp com Python.</p>
-        <div class="repo-icon">
-          <i class="fab fa-github"></i> 
-          <a href="https://github.com/Pedroph185/whatsapp-bot-pedidos" target="_blank">Ver projeto</a>
-        </div>
-      </div>
-    </div>
+
+      <section class="skill">
+        <h3 class="h3">🛠️ Habilidades Técnicas</h3>
+        <ul class="skills-list">
+          <li class="skills-item">
+            <div class="title-wrapper"><h5>Suporte Técnico</h5><data value="80">80%</data></div>
+            <div class="skill-progress-bg"><div class="skill-progress-fill" style="width: 80%;"></div></div>
+          </li>
+          <li class="skills-item">
+            <div class="title-wrapper"><h5>Redes (TCP/IP, VPN)</h5><data value="70">70%</data></div>
+            <div class="skill-progress-bg"><div class="skill-progress-fill" style="width: 70%;"></div></div>
+          </li>
+          <li class="skills-item">
+            <div class="title-wrapper"><h5>Python</h5><data value="65">65%</data></div>
+            <div class="skill-progress-bg"><div class="skill-progress-fill" style="width: 65%;"></div></div>
+          </li>
+          <li class="skills-item">
+            <div class="title-wrapper"><h5>SQL</h5><data value="60">60%</data></div>
+            <div class="skill-progress-bg"><div class="skill-progress-fill" style="width: 60%;"></div></div>
+          </li>
+          <li class="skills-item">
+            <div class="title-wrapper"><h5>Linux</h5><data value="60">60%</data></div>
+            <div class="skill-progress-bg"><div class="skill-progress-fill" style="width: 60%;"></div></div>
+          </li>
+        </ul>
+      </section>
+    </article>
+
+    <!-- ===== PROJETOS ===== -->
+    <article class="article" id="portfolio">
+      <h2 class="h2">Projetos</h2>
+
+      <ul class="filter-list">
+        <li class="filter-item"><button class="active" data-filter="all">Todos</button></li>
+        <li class="filter-item"><button data-filter="python">Python</button></li>
+        <li class="filter-item"><button data-filter="web">Web</button></li>
+      </ul>
+
+      <ul class="project-list">
+        <li class="project-item" data-category="python">
+          <a href="https://github.com/Pedroph185/Analisador-Curriculos" target="_blank">
+            <img src="https://i.imgur.com/LmLlkp1.jpeg" alt="Analisador de Currículos">
+            <h3>Analisador de Currículos</h3>
+            <p>Python + IA para extrair dados de PDFs</p>
+          </a>
+        </li>
+        <li class="project-item" data-category="python">
+          <a href="https://github.com/Pedroph185/Sistema-tarefas" target="_blank">
+            <img src="https://i.imgur.com/LmLlkp1.jpeg" alt="Sistema de Tarefas">
+            <h3>Sistema de Tarefas</h3>
+            <p>Dashboard com Python e GitHub Actions</p>
+          </a>
+        </li>
+        <li class="project-item" data-category="web">
+          <a href="https://labalmeidaecunha.lovable.app/" target="_blank">
+            <img src="https://i.imgur.com/LmLlkp1.jpeg" alt="Lab Almeida e Cunha">
+            <h3>Lab Almeida e Cunha</h3>
+            <p>Site institucional com HTML/CSS</p>
+          </a>
+        </li>
+        <li class="project-item" data-category="python">
+          <a href="https://github.com/Pedroph185/whatsapp-bot-pedidos" target="_blank">
+            <img src="https://i.imgur.com/LmLlkp1.jpeg" alt="WhatsApp Bot">
+            <h3>Robozinho WhatsApp</h3>
+            <p>Bot automatizado com Python</p>
+          </a>
+        </li>
+      </ul>
+    </article>
 
     <!-- ===== CONTATO ===== -->
-    <div class="section-title" style="margin-top:2rem;">
-      <i class="fas fa-address-card"></i> Contato
-    </div>
-    <div class="contact-info">
-      <span class="contact-item"><i class="fas fa-phone-alt"></i> 11 94575-8256</span>
-      <span class="contact-item"><i class="fas fa-envelope"></i> wirelesspedro@gmail.com</span>
-      <span class="contact-item"><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/pedro-cavalcanti-23a250334/" target="_blank">LinkedIn</a></span>
-      <span class="contact-item"><i class="fab fa-github"></i> <a href="https://github.com/Pedroph185" target="_blank">github.com/Pedroph185</a></span>
-    </div>
+    <article class="article" id="contact">
+      <h2 class="h2">Contato</h2>
 
-    <!-- ===== BOTÃO GITHUB ===== -->
-    <a href="https://github.com/Pedroph185" class="btn-github" target="_blank">
-      <i class="fab fa-github"></i> Ver portfólio no GitHub
-    </a>
+      <section class="contact-form">
+        <h3 class="h3">Envie uma mensagem</h3>
+        <form action="#" class="form" onsubmit="event.preventDefault(); alert('Mensagem enviada! Em breve responderei.');">
+          <div class="input-wrapper">
+            <input type="text" class="form-input" placeholder="Seu nome" required>
+            <input type="email" class="form-input" placeholder="Seu e-mail" required>
+          </div>
+          <textarea class="form-input" placeholder="Sua mensagem..." required></textarea>
+          <button class="form-btn" type="submit">
+            <ion-icon name="paper-plane"></ion-icon>
+            <span>Enviar Mensagem</span>
+          </button>
+        </form>
+      </section>
 
-    <!-- ===== BADGE DO LINKEDIN ===== -->
-    <div class="linkedin-badge-footer">
-      <div class="badge-base LI-profile-badge" data-locale="pt_BR" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="pedro-cavalcanti-23a250334" data-version="v1">
-        <a class="badge-base__link LI-profile-badge__link" href="https://br.linkedin.com/in/pedro-cavalcanti-23a250334/pt?trk=profile-badge">Pedro Cavalcanti</a>
+      <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid var(--border-color); text-align: center; color: var(--text-tertiary);">
+        <p>📧 wirelesspedro@gmail.com · 📱 (11) 94575-8256</p>
+        <p style="margin-top: 10px;">
+          <a href="https://www.linkedin.com/in/pedro-cavalcanti-23a250334/" target="_blank" style="color: var(--accent-hover); text-decoration: none;">LinkedIn</a> ·
+          <a href="https://github.com/Pedroph185" target="_blank" style="color: var(--accent-hover); text-decoration: none;">GitHub</a>
+        </p>
       </div>
-    </div>
-
-    <!-- ===== FOOTER ===== -->
-    <div class="footer">
-      <i class="fas fa-code"></i> desenvolvido com <i class="fas fa-heart"></i> por Pedro Henrique · 2026
-    </div>
+    </article>
 
   </div>
-</div>
+</main>
 
-<!-- ===== BOTÃO VOLTAR AO TOPO ===== -->
-<button onclick="topFunction()" id="btnTopo" title="Voltar ao topo">
-  <i class="fas fa-arrow-up"></i>
-</button>
+<!-- ===== IONICONS ===== -->
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
-<!-- ===== SCRIPT DO BOTÃO VOLTAR AO TOPO ===== -->
+<!-- ===== NAVEGAÇÃO POR ABAS ===== -->
 <script>
-  // Mostrar/esconder botão ao rolar a página
-  window.onscroll = function() {
-    const btn = document.getElementById("btnTopo");
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-      btn.style.display = "block";
-    } else {
-      btn.style.display = "none";
-    }
-  };
+  (function() {
+    const navLinks = document.querySelectorAll('[data-nav-link]');
+    const articles = {
+      about: document.getElementById('about'),
+      resume: document.getElementById('resume'),
+      portfolio: document.getElementById('portfolio'),
+      contact: document.getElementById('contact'),
+    };
 
-  // Função para voltar ao topo
-  function topFunction() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-  }
+    navLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        const target = this.dataset.navLink;
+
+        navLinks.forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+
+        Object.values(articles).forEach(art => art.classList.remove('active'));
+        if (articles[target]) {
+          articles[target].classList.add('active');
+        }
+      });
+    });
+
+    // Filtro de projetos
+    const filterButtons = document.querySelectorAll('[data-filter]');
+    const projectItems = document.querySelectorAll('.project-item');
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', function() {
+        const filter = this.dataset.filter;
+
+        filterButtons.forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+
+        projectItems.forEach(item => {
+          const category = item.dataset.category;
+          if (filter === 'all' || category === filter) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+  })();
 </script>
-
-<!-- ===== SCRIPT DO BADGE DO LINKEDIN ===== -->
-<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
 
 </body>
 </html>
