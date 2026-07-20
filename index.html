@@ -25,15 +25,49 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            /* ===== FUNDO COM GRADE DINÂMICA ===== */
+            background-image:
+                linear-gradient(rgba(88, 166, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(88, 166, 255, 0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+            position: relative;
+        }
+
+        /* ===== FUNDO COM BRILHO PULSANTE ===== */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 0;
+            background: radial-gradient(circle at 20% 30%, rgba(31, 111, 235, 0.08) 0%, transparent 60%),
+                        radial-gradient(circle at 80% 70%, rgba(88, 166, 255, 0.06) 0%, transparent 50%);
+            pointer-events: none;
+            animation: backgroundFloat 20s ease-in-out infinite alternate;
+        }
+
+        @keyframes backgroundFloat {
+            0% {
+                opacity: 0.6;
+                transform: scale(1);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1.05);
+            }
         }
 
         .container {
             max-width: 1100px;
             width: 100%;
+            position: relative;
+            z-index: 1;
         }
 
         /* =============================================
-           CARD PRINCIPAL
+           CARD PRINCIPAL COM ANIMAÇÃO DE ENTRADA
            ============================================= */
         .card {
             background: #13181f;
@@ -41,10 +75,24 @@
             padding: 2rem 2rem 2.2rem;
             border: 1px solid #2d333b;
             box-shadow: 0 12px 40px rgba(0, 0, 0, 0.7);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* =============================================
-           CABEÇALHO
+           CABEÇALHO COM ANIMAÇÃO NO NOME
            ============================================= */
         .header {
             display: flex;
@@ -65,6 +113,8 @@
             flex-shrink: 0;
             background: #1c2333;
             transition: 0.3s ease;
+            opacity: 0;
+            animation: fadeInUp 0.6s ease 0.2s forwards;
         }
 
         .foto img {
@@ -79,11 +129,34 @@
             box-shadow: 0 0 25px rgba(88, 166, 255, 0.2);
         }
 
+        .header-text {
+            opacity: 0;
+            animation: fadeInUp 0.6s ease 0.3s forwards;
+        }
+
         .header-text h1 {
             font-size: 1.9rem;
             font-weight: 700;
             letter-spacing: -0.5px;
             color: #f0f6fc;
+            position: relative;
+            display: inline-block;
+        }
+
+        /* ===== EFEITO DE GRADIENTE E SUBLINHADO NO NOME ===== */
+        .header-text h1::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -4px;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(to right, #1f6feb, #58a6ff);
+            transition: width 0.6s ease;
+        }
+
+        .header-text:hover h1::after {
+            width: 100%;
         }
 
         .header-text .tag {
@@ -96,6 +169,14 @@
             border-radius: 30px;
             border: 1px solid #2d333b;
             margin: 4px 0 6px 0;
+            transition: 0.3s ease;
+        }
+
+        .header-text .tag:hover {
+            background: #1f6feb;
+            color: #fff;
+            border-color: #1f6feb;
+            transform: scale(1.05);
         }
 
         .header-text p {
@@ -119,6 +200,8 @@
             margin-bottom: 2rem;
             transition: 0.3s ease;
             min-height: 80px;
+            opacity: 0;
+            animation: fadeInUp 0.6s ease 0.4s forwards;
         }
 
         .intro:hover {
@@ -144,7 +227,6 @@
             color: #f0f6fc;
         }
 
-        /* ===== EFEITO DE CURSOR PISCANDO ===== */
         .cursor {
             display: inline-block;
             width: 2px;
@@ -173,6 +255,8 @@
             color: #f0f6fc;
             border-bottom: 1px solid #2d333b;
             padding-bottom: 0.5rem;
+            opacity: 0;
+            animation: fadeInUp 0.6s ease 0.6s forwards;
         }
 
         .secao-titulo i {
@@ -200,7 +284,18 @@
             border: 1px solid #2d333b;
             transition: 0.25s ease;
             cursor: default;
+            opacity: 0;
+            animation: fadeInUp 0.4s ease forwards;
         }
+
+        .tech-tag:nth-child(1) { animation-delay: 0.7s; }
+        .tech-tag:nth-child(2) { animation-delay: 0.75s; }
+        .tech-tag:nth-child(3) { animation-delay: 0.8s; }
+        .tech-tag:nth-child(4) { animation-delay: 0.85s; }
+        .tech-tag:nth-child(5) { animation-delay: 0.9s; }
+        .tech-tag:nth-child(6) { animation-delay: 0.95s; }
+        .tech-tag:nth-child(7) { animation-delay: 1.0s; }
+        .tech-tag:nth-child(8) { animation-delay: 1.05s; }
 
         .tech-tag i {
             margin-right: 5px;
@@ -239,7 +334,15 @@
             font-size: 0.9rem;
             color: #c9d1d9;
             transition: 0.25s ease;
+            opacity: 0;
+            animation: fadeInUp 0.4s ease forwards;
         }
+
+        .lista-estudos li:nth-child(1) { animation-delay: 1.1s; }
+        .lista-estudos li:nth-child(2) { animation-delay: 1.15s; }
+        .lista-estudos li:nth-child(3) { animation-delay: 1.2s; }
+        .lista-estudos li:nth-child(4) { animation-delay: 1.25s; }
+        .lista-estudos li:nth-child(5) { animation-delay: 1.3s; }
 
         .lista-estudos li i {
             color: #58a6ff;
@@ -278,7 +381,12 @@
             text-decoration: none;
             color: inherit;
             display: block;
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
         }
+
+        .destaque-item:nth-child(1) { animation-delay: 1.4s; }
+        .destaque-item:nth-child(2) { animation-delay: 1.5s; }
 
         .destaque-item:hover {
             border-color: #58a6ff;
@@ -370,7 +478,14 @@
             border-radius: 16px;
             padding: 1rem 1.2rem;
             transition: 0.3s ease;
+            opacity: 0;
+            animation: fadeInUp 0.5s ease forwards;
         }
+
+        .card-projeto:nth-child(1) { animation-delay: 1.6s; }
+        .card-projeto:nth-child(2) { animation-delay: 1.65s; }
+        .card-projeto:nth-child(3) { animation-delay: 1.7s; }
+        .card-projeto:nth-child(4) { animation-delay: 1.75s; }
 
         .card-projeto:hover {
             border-color: #58a6ff;
@@ -433,6 +548,8 @@
             border: 1px solid #2d333b;
             margin-top: 1rem;
             transition: 0.3s ease;
+            opacity: 0;
+            animation: fadeInUp 0.6s ease 1.8s forwards;
         }
 
         .contato-box:hover {
@@ -485,6 +602,8 @@
             transition: 0.3s ease;
             margin-top: 0.8rem;
             text-decoration: none;
+            opacity: 0;
+            animation: fadeInUp 0.6s ease 1.9s forwards;
         }
 
         .btn-github i {
@@ -510,6 +629,8 @@
             font-size: 0.8rem;
             border-top: 1px solid #21262d;
             padding-top: 1.5rem;
+            opacity: 0;
+            animation: fadeInUp 0.6s ease 2s forwards;
         }
 
         .footer i {
@@ -549,6 +670,10 @@
                 flex-direction: column;
                 align-items: center;
                 text-align: center;
+            }
+
+            .header-text h1 {
+                font-size: 1.5rem;
             }
 
             .contato-box {
@@ -726,7 +851,6 @@
             const cursorElement = document.getElementById('cursor');
             const textoCompleto = textoElement.textContent;
 
-            // Esconde o texto e prepara para digitar
             let textoExibido = '';
             let index = 0;
             textoElement.textContent = '';
@@ -736,16 +860,11 @@
                     textoExibido += textoCompleto.charAt(index);
                     textoElement.textContent = textoExibido;
                     index++;
-                    // Velocidade variável para simular digitação humana
                     const delay = textoCompleto.charAt(index - 1) === ' ' ? 30 : 50;
                     setTimeout(typeWriter, delay);
-                } else {
-                    // Quando terminar, esconde o cursor (opcional)
-                    // cursorElement.style.display = 'none';
                 }
             }
 
-            // Inicia a digitação após um pequeno atraso
             setTimeout(typeWriter, 500);
         });
     </script>
