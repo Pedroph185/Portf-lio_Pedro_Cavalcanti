@@ -4,16 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pedro Henrique · Portfólio</title>
-
-    <!-- ===== ÍCONES (USO BÁSICO, SEM EXAGEROS) ===== -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
-    <!-- ===== FONTE ÚNICA ===== -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
-
     <style>
         /* =============================================
-           ESTILOS PESSOAIS - FEITO NA MÃO
+           RESET E CONFIGURAÇÕES GERAIS
            ============================================= */
         * {
             margin: 0;
@@ -37,7 +32,9 @@
             width: 100%;
         }
 
-        /* ===== CARD PRINCIPAL ===== */
+        /* =============================================
+           CARD PRINCIPAL
+           ============================================= */
         .card {
             background: #13181f;
             border-radius: 28px;
@@ -46,7 +43,9 @@
             box-shadow: 0 12px 40px rgba(0, 0, 0, 0.7);
         }
 
-        /* ===== TOPO COM FOTO ===== */
+        /* =============================================
+           CABEÇALHO
+           ============================================= */
         .header {
             display: flex;
             flex-wrap: wrap;
@@ -65,7 +64,7 @@
             border: 3px solid #2d333b;
             flex-shrink: 0;
             background: #1c2333;
-            transition: 0.2s;
+            transition: 0.3s ease;
         }
 
         .foto img {
@@ -76,6 +75,8 @@
 
         .foto:hover {
             border-color: #58a6ff;
+            transform: scale(1.05) rotate(2deg);
+            box-shadow: 0 0 25px rgba(88, 166, 255, 0.2);
         }
 
         .header-text h1 {
@@ -107,13 +108,22 @@
             margin-right: 4px;
         }
 
-        /* ===== INTRODUÇÃO ===== */
+        /* =============================================
+           INTRODUÇÃO
+           ============================================= */
         .intro {
             background: #0b0e14;
             padding: 1.2rem 1.5rem;
             border-radius: 18px;
             border-left: 4px solid #1f6feb;
             margin-bottom: 2rem;
+            transition: 0.3s ease;
+        }
+
+        .intro:hover {
+            border-left-color: #58a6ff;
+            box-shadow: 0 0 30px rgba(31, 111, 235, 0.08);
+            transform: translateX(4px);
         }
 
         .intro p {
@@ -125,7 +135,9 @@
             color: #f0f6fc;
         }
 
-        /* ===== TÍTULOS DAS SEÇÕES ===== */
+        /* =============================================
+           TÍTULOS DAS SEÇÕES
+           ============================================= */
         .secao-titulo {
             display: flex;
             align-items: center;
@@ -143,7 +155,9 @@
             font-size: 1.2rem;
         }
 
-        /* ===== TECNOLOGIAS (BOTÕES) ===== */
+        /* =============================================
+           TECNOLOGIAS
+           ============================================= */
         .tech-grid {
             display: flex;
             flex-wrap: wrap;
@@ -159,22 +173,31 @@
             font-weight: 500;
             color: #c9d1d9;
             border: 1px solid #2d333b;
-            transition: 0.2s;
+            transition: 0.25s ease;
+            cursor: default;
         }
 
         .tech-tag i {
             margin-right: 5px;
             color: #58a6ff;
+            transition: 0.25s ease;
         }
 
         .tech-tag:hover {
             background: #1f6feb;
             color: #fff;
             border-color: #1f6feb;
-            transform: translateY(-2px);
+            transform: translateY(-3px) scale(1.04);
+            box-shadow: 0 6px 20px rgba(31, 111, 235, 0.3);
         }
 
-        /* ===== LISTA DE ESTUDOS ===== */
+        .tech-tag:hover i {
+            color: #fff;
+        }
+
+        /* =============================================
+           LISTA DE ESTUDOS
+           ============================================= */
         .lista-estudos {
             list-style: none;
             display: flex;
@@ -190,102 +213,128 @@
             border: 1px solid #2d333b;
             font-size: 0.9rem;
             color: #c9d1d9;
-            transition: 0.2s;
+            transition: 0.25s ease;
         }
 
         .lista-estudos li i {
             color: #58a6ff;
             margin-right: 6px;
+            transition: 0.25s ease;
         }
 
         .lista-estudos li:hover {
             border-color: #58a6ff;
             background: #13181f;
+            transform: translateX(5px);
+            box-shadow: 0 0 20px rgba(31, 111, 235, 0.05);
         }
 
-        /* ===== PROJETO EM DESTAQUE ===== */
-        .destaque {
+        .lista-estudos li:hover i {
+            color: #f0f6fc;
+            transform: scale(1.2);
+        }
+
+        /* =============================================
+           PROJETOS EM DESTAQUE
+           ============================================= */
+        .destaque-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 0.8rem 0 1.5rem 0;
+        }
+
+        .destaque-item {
             background: #0b0e14;
-            border: 1.5px solid #1f6feb;
+            border: 1.5px solid #2d333b;
             border-radius: 18px;
             padding: 1.5rem;
-            margin: 0.8rem 0 1.5rem 0;
-            transition: 0.2s;
+            transition: 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: block;
         }
 
-        .destaque:hover {
+        .destaque-item:hover {
             border-color: #58a6ff;
-            box-shadow: 0 0 25px rgba(31, 111, 235, 0.08);
+            transform: translateY(-6px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
+            background: #11181f;
         }
 
-        .destaque .badge {
+        .destaque-item .badge {
             display: inline-block;
             background: #1f6feb;
             color: #fff;
-            font-size: 0.65rem;
+            font-size: 0.6rem;
             font-weight: 700;
             padding: 0.15rem 0.8rem;
             border-radius: 30px;
             text-transform: uppercase;
             letter-spacing: 0.3px;
             margin-bottom: 0.5rem;
+            transition: 0.3s ease;
         }
 
-        .destaque h3 {
-            font-size: 1.4rem;
+        .destaque-item:hover .badge {
+            background: #58a6ff;
+            box-shadow: 0 0 15px rgba(88, 166, 255, 0.3);
+        }
+
+        .destaque-item h3 {
+            font-size: 1.2rem;
             color: #f0f6fc;
             margin-bottom: 0.3rem;
-        }
-
-        .destaque h3 i {
-            color: #58a6ff;
-            margin-right: 8px;
-        }
-
-        .destaque p {
-            color: #c9d1d9;
-            font-size: 0.95rem;
-            margin-bottom: 1rem;
-        }
-
-        .btn-demo {
-            background: #1f6feb;
-            color: #fff;
-            padding: 0.4rem 1.4rem;
-            border-radius: 40px;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.9rem;
-            display: inline-flex;
+            display: flex;
             align-items: center;
             gap: 8px;
-            border: 1px solid #1f6feb;
-            transition: 0.2s;
         }
 
-        .btn-demo:hover {
-            background: transparent;
+        .destaque-item h3 i {
             color: #58a6ff;
-            border-color: #58a6ff;
+            transition: 0.3s ease;
         }
 
-        .link-repo {
+        .destaque-item:hover h3 i {
+            transform: rotate(5deg) scale(1.1);
+        }
+
+        .destaque-item p {
             color: #8b949e;
-            font-size: 0.85rem;
-            margin-left: 1rem;
-            text-decoration: none;
-            transition: 0.2s;
+            font-size: 0.9rem;
+            margin-bottom: 0.8rem;
         }
 
-        .link-repo:hover {
+        .destaque-item .link-acao {
             color: #58a6ff;
-            text-decoration: underline;
+            font-size: 0.85rem;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            border-bottom: 1px solid transparent;
+            transition: 0.3s ease;
         }
 
-        /* ===== OUTROS PROJETOS (GRID) ===== */
+        .destaque-item .link-acao i {
+            transition: 0.3s ease;
+        }
+
+        .destaque-item:hover .link-acao {
+            border-bottom-color: #58a6ff;
+            color: #f0f6fc;
+        }
+
+        .destaque-item:hover .link-acao i {
+            transform: translateX(4px);
+        }
+
+        /* =============================================
+           OUTROS PROJETOS (GRID)
+           ============================================= */
         .grid-projetos {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
             gap: 1rem;
             margin: 0.8rem 0 0.5rem 0;
         }
@@ -295,13 +344,13 @@
             border: 1px solid #2d333b;
             border-radius: 16px;
             padding: 1rem 1.2rem;
-            transition: 0.2s;
+            transition: 0.3s ease;
         }
 
         .card-projeto:hover {
             border-color: #58a6ff;
-            transform: translateY(-4px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
         }
 
         .card-projeto h4 {
@@ -315,6 +364,11 @@
 
         .card-projeto h4 i {
             color: #58a6ff;
+            transition: 0.3s ease;
+        }
+
+        .card-projeto:hover h4 i {
+            transform: scale(1.2) rotate(5deg);
         }
 
         .card-projeto p {
@@ -332,6 +386,7 @@
         .card-projeto .link-git a {
             color: #58a6ff;
             text-decoration: none;
+            transition: 0.2s ease;
         }
 
         .card-projeto .link-git a:hover {
@@ -339,7 +394,9 @@
             text-decoration: underline;
         }
 
-        /* ===== CONTATO ===== */
+        /* =============================================
+           CONTATO
+           ============================================= */
         .contato-box {
             display: flex;
             flex-wrap: wrap;
@@ -350,6 +407,12 @@
             border-radius: 40px;
             border: 1px solid #2d333b;
             margin-top: 1rem;
+            transition: 0.3s ease;
+        }
+
+        .contato-box:hover {
+            border-color: #58a6ff;
+            box-shadow: 0 0 30px rgba(31, 111, 235, 0.03);
         }
 
         .contato-item {
@@ -358,18 +421,25 @@
             gap: 8px;
             color: #c9d1d9;
             font-size: 0.9rem;
+            transition: 0.2s ease;
         }
 
         .contato-item i {
             color: #58a6ff;
             width: 1.4rem;
             text-align: center;
+            transition: 0.3s ease;
+        }
+
+        .contato-item:hover i {
+            transform: scale(1.2) rotate(5deg);
         }
 
         .contato-item a {
             color: #58a6ff;
             text-decoration: none;
             border-bottom: 1px dotted transparent;
+            transition: 0.2s ease;
         }
 
         .contato-item a:hover {
@@ -387,15 +457,25 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            transition: 0.2s;
+            transition: 0.3s ease;
             margin-top: 0.8rem;
             text-decoration: none;
+        }
+
+        .btn-github i {
+            transition: 0.3s ease;
         }
 
         .btn-github:hover {
             background: #1f6feb;
             border-color: #1f6feb;
             color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(31, 111, 235, 0.3);
+        }
+
+        .btn-github:hover i {
+            transform: rotate(10deg);
         }
 
         .footer {
@@ -409,13 +489,32 @@
 
         .footer i {
             color: #1f6feb;
+            transition: 0.3s ease;
         }
 
         .footer i.fa-heart {
             color: #f85149;
+            animation: pulseHeart 1.8s ease-in-out infinite;
         }
 
-        /* ===== RESPONSIVO ===== */
+        @keyframes pulseHeart {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.3); }
+        }
+
+        .footer:hover i.fa-code {
+            transform: rotate(10deg);
+        }
+
+        /* =============================================
+           RESPONSIVO
+           ============================================= */
+        @media (max-width: 768px) {
+            .destaque-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         @media (max-width: 640px) {
             .card {
                 padding: 1.2rem;
@@ -496,19 +595,26 @@
                 <li><i class="fas fa-check-circle"></i> Salesforce Trailhead</li>
             </ul>
 
-            <!-- ===== PROJETO DESTAQUE ===== -->
+            <!-- ===== PROJETOS EM DESTAQUE ===== -->
             <div class="secao-titulo">
-                <i class="fas fa-star" style="color:#f85149;"></i> ⭐ Destaque
+                <i class="fas fa-star" style="color:#f85149;"></i> ⭐ Projetos em destaque
             </div>
-            <div class="destaque">
-                <span class="badge"><i class="fas fa-crown"></i> Melhor projeto</span>
-                <h3><i class="fas fa-flask"></i> Lab Almeida e Cunha</h3>
-                <p>Site institucional completo para laboratório de análises clínicas. Design responsivo e foco em experiência do usuário.</p>
-                <a href="https://labalmeidaecunha.lovable.app/" target="_blank" class="btn-demo">
-                    <i class="fas fa-external-link-alt"></i> Ver site
+            <div class="destaque-grid">
+
+                <!-- Projeto 1: Analisador de Currículos -->
+                <a href="https://github.com/Pedroph185/Analisador-Curriculos" target="_blank" class="destaque-item">
+                    <span class="badge"><i class="fas fa-crown"></i> Novo!</span>
+                    <h3><i class="fas fa-file-alt"></i> Analisador de Currículos</h3>
+                    <p>Sistema que extrai dados de PDFs (e-mail, telefone, LinkedIn, GitHub e habilidades) usando Python e IA.</p>
+                    <span class="link-acao">Ver no GitHub <i class="fas fa-arrow-right"></i></span>
                 </a>
-                <a href="https://github.com/Pedroph185" target="_blank" class="link-repo">
-                    <i class="fab fa-github"></i> Código
+
+                <!-- Projeto 2: Lab Almeida e Cunha -->
+                <a href="https://labalmeidaecunha.lovable.app/" target="_blank" class="destaque-item">
+                    <span class="badge"><i class="fas fa-flask"></i> Melhor projeto</span>
+                    <h3><i class="fas fa-hospital"></i> Lab Almeida e Cunha</h3>
+                    <p>Site institucional completo para um laboratório de análises clínicas. Design responsivo e foco na experiência do usuário.</p>
+                    <span class="link-acao">Ver site ao vivo <i class="fas fa-arrow-right"></i></span>
                 </a>
             </div>
 
