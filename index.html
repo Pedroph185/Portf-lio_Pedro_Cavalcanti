@@ -1,48 +1,577 @@
-<!-- ===== PROJETOS ===== -->
-<article class="article" id="portfolio">
-  <h2 class="h2">Projetos</h2>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedro Henrique · Portfólio</title>
 
-  <ul class="filter-list">
-    <li class="filter-item"><button class="active" data-filter="all">Todos</button></li>
-    <li class="filter-item"><button data-filter="python">Python</button></li>
-    <li class="filter-item"><button data-filter="web">Web</button></li>
-  </ul>
+    <!-- ===== ÍCONES (USO BÁSICO, SEM EXAGEROS) ===== -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- ===== FONTE ÚNICA ===== -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
 
-  <ul class="project-list">
-    <!-- Projeto 1: Analisador de Currículos -->
-    <li class="project-item" data-category="python">
-      <a href="https://github.com/Pedroph185/Analisador-Curriculos" target="_blank">
-        <img src="https://img.icons8.com/color/96/000000/python.png" alt="Analisador de Currículos" style="width:100%; height:150px; object-fit:contain; background:#0d1117; padding:20px;">
-        <h3>Analisador de Currículos</h3>
-        <p>Python + IA para extrair dados de PDFs</p>
-      </a>
-    </li>
+    <style>
+        /* =============================================
+           ESTILOS PESSOAIS - FEITO NA MÃO
+           ============================================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <!-- Projeto 2: Sistema de Tarefas -->
-    <li class="project-item" data-category="python">
-      <a href="https://github.com/Pedroph185/Sistema-tarefas" target="_blank">
-        <img src="https://img.icons8.com/color/96/000000/task.png" alt="Sistema de Tarefas" style="width:100%; height:150px; object-fit:contain; background:#0d1117; padding:20px;">
-        <h3>Sistema de Tarefas</h3>
-        <p>Dashboard com Python e GitHub Actions</p>
-      </a>
-    </li>
+        body {
+            background: #0b0e14;
+            color: #e6edf3;
+            font-family: 'Inter', sans-serif;
+            padding: 24px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-    <!-- Projeto 3: Lab Almeida e Cunha -->
-    <li class="project-item" data-category="web">
-      <a href="https://labalmeidaecunha.lovable.app/" target="_blank">
-        <img src="https://img.icons8.com/color/96/000000/html-5.png" alt="Lab Almeida e Cunha" style="width:100%; height:150px; object-fit:contain; background:#0d1117; padding:20px;">
-        <h3>Lab Almeida e Cunha</h3>
-        <p>Site institucional com HTML/CSS</p>
-      </a>
-    </li>
+        .container {
+            max-width: 1100px;
+            width: 100%;
+        }
 
-    <!-- Projeto 4: Robozinho WhatsApp -->
-    <li class="project-item" data-category="python">
-      <a href="https://github.com/Pedroph185/whatsapp-bot-pedidos" target="_blank">
-        <img src="https://img.icons8.com/color/96/000000/whatsapp.png" alt="Robozinho WhatsApp" style="width:100%; height:150px; object-fit:contain; background:#0d1117; padding:20px;">
-        <h3>Robozinho WhatsApp</h3>
-        <p>Bot automatizado com Python</p>
-      </a>
-    </li>
-  </ul>
-</article>
+        /* ===== CARD PRINCIPAL ===== */
+        .card {
+            background: #13181f;
+            border-radius: 28px;
+            padding: 2rem 2rem 2.2rem;
+            border: 1px solid #2d333b;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.7);
+        }
+
+        /* ===== TOPO COM FOTO ===== */
+        .header {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 1.8rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #2d333b;
+        }
+
+        .foto {
+            width: 85px;
+            height: 85px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid #2d333b;
+            flex-shrink: 0;
+            background: #1c2333;
+            transition: 0.2s;
+        }
+
+        .foto img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .foto:hover {
+            border-color: #58a6ff;
+        }
+
+        .header-text h1 {
+            font-size: 1.9rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            color: #f0f6fc;
+        }
+
+        .header-text .tag {
+            display: inline-block;
+            background: #1c2333;
+            color: #8b949e;
+            font-size: 0.75rem;
+            font-weight: 500;
+            padding: 0.2rem 0.9rem;
+            border-radius: 30px;
+            border: 1px solid #2d333b;
+            margin: 4px 0 6px 0;
+        }
+
+        .header-text p {
+            color: #8b949e;
+            font-size: 0.95rem;
+        }
+
+        .header-text p i {
+            color: #58a6ff;
+            margin-right: 4px;
+        }
+
+        /* ===== INTRODUÇÃO ===== */
+        .intro {
+            background: #0b0e14;
+            padding: 1.2rem 1.5rem;
+            border-radius: 18px;
+            border-left: 4px solid #1f6feb;
+            margin-bottom: 2rem;
+        }
+
+        .intro p {
+            color: #c9d1d9;
+            font-size: 0.98rem;
+        }
+
+        .intro strong {
+            color: #f0f6fc;
+        }
+
+        /* ===== TÍTULOS DAS SEÇÕES ===== */
+        .secao-titulo {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin: 2rem 0 1rem 0;
+            color: #f0f6fc;
+            border-bottom: 1px solid #2d333b;
+            padding-bottom: 0.5rem;
+        }
+
+        .secao-titulo i {
+            color: #58a6ff;
+            font-size: 1.2rem;
+        }
+
+        /* ===== TECNOLOGIAS (BOTÕES) ===== */
+        .tech-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem 0.9rem;
+            margin: 0.5rem 0 0.3rem 0;
+        }
+
+        .tech-tag {
+            background: #1c2333;
+            padding: 0.25rem 1rem;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #c9d1d9;
+            border: 1px solid #2d333b;
+            transition: 0.2s;
+        }
+
+        .tech-tag i {
+            margin-right: 5px;
+            color: #58a6ff;
+        }
+
+        .tech-tag:hover {
+            background: #1f6feb;
+            color: #fff;
+            border-color: #1f6feb;
+            transform: translateY(-2px);
+        }
+
+        /* ===== LISTA DE ESTUDOS ===== */
+        .lista-estudos {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 0.6rem;
+        }
+
+        .lista-estudos li {
+            background: #0b0e14;
+            padding: 0.4rem 1.2rem;
+            border-radius: 40px;
+            border: 1px solid #2d333b;
+            font-size: 0.9rem;
+            color: #c9d1d9;
+            transition: 0.2s;
+        }
+
+        .lista-estudos li i {
+            color: #58a6ff;
+            margin-right: 6px;
+        }
+
+        .lista-estudos li:hover {
+            border-color: #58a6ff;
+            background: #13181f;
+        }
+
+        /* ===== PROJETO EM DESTAQUE ===== */
+        .destaque {
+            background: #0b0e14;
+            border: 1.5px solid #1f6feb;
+            border-radius: 18px;
+            padding: 1.5rem;
+            margin: 0.8rem 0 1.5rem 0;
+            transition: 0.2s;
+        }
+
+        .destaque:hover {
+            border-color: #58a6ff;
+            box-shadow: 0 0 25px rgba(31, 111, 235, 0.08);
+        }
+
+        .destaque .badge {
+            display: inline-block;
+            background: #1f6feb;
+            color: #fff;
+            font-size: 0.65rem;
+            font-weight: 700;
+            padding: 0.15rem 0.8rem;
+            border-radius: 30px;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            margin-bottom: 0.5rem;
+        }
+
+        .destaque h3 {
+            font-size: 1.4rem;
+            color: #f0f6fc;
+            margin-bottom: 0.3rem;
+        }
+
+        .destaque h3 i {
+            color: #58a6ff;
+            margin-right: 8px;
+        }
+
+        .destaque p {
+            color: #c9d1d9;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .btn-demo {
+            background: #1f6feb;
+            color: #fff;
+            padding: 0.4rem 1.4rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid #1f6feb;
+            transition: 0.2s;
+        }
+
+        .btn-demo:hover {
+            background: transparent;
+            color: #58a6ff;
+            border-color: #58a6ff;
+        }
+
+        .link-repo {
+            color: #8b949e;
+            font-size: 0.85rem;
+            margin-left: 1rem;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .link-repo:hover {
+            color: #58a6ff;
+            text-decoration: underline;
+        }
+
+        /* ===== OUTROS PROJETOS (GRID) ===== */
+        .grid-projetos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            gap: 1rem;
+            margin: 0.8rem 0 0.5rem 0;
+        }
+
+        .card-projeto {
+            background: #0b0e14;
+            border: 1px solid #2d333b;
+            border-radius: 16px;
+            padding: 1rem 1.2rem;
+            transition: 0.2s;
+        }
+
+        .card-projeto:hover {
+            border-color: #58a6ff;
+            transform: translateY(-4px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .card-projeto h4 {
+            color: #f0f6fc;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 0.2rem;
+        }
+
+        .card-projeto h4 i {
+            color: #58a6ff;
+        }
+
+        .card-projeto p {
+            color: #8b949e;
+            font-size: 0.8rem;
+        }
+
+        .card-projeto .link-git {
+            margin-top: 0.6rem;
+            font-size: 0.75rem;
+            border-top: 1px solid #21262d;
+            padding-top: 0.5rem;
+        }
+
+        .card-projeto .link-git a {
+            color: #58a6ff;
+            text-decoration: none;
+        }
+
+        .card-projeto .link-git a:hover {
+            color: #f0f6fc;
+            text-decoration: underline;
+        }
+
+        /* ===== CONTATO ===== */
+        .contato-box {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 1rem 2rem;
+            background: #0b0e14;
+            padding: 0.8rem 1.5rem;
+            border-radius: 40px;
+            border: 1px solid #2d333b;
+            margin-top: 1rem;
+        }
+
+        .contato-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #c9d1d9;
+            font-size: 0.9rem;
+        }
+
+        .contato-item i {
+            color: #58a6ff;
+            width: 1.4rem;
+            text-align: center;
+        }
+
+        .contato-item a {
+            color: #58a6ff;
+            text-decoration: none;
+            border-bottom: 1px dotted transparent;
+        }
+
+        .contato-item a:hover {
+            border-bottom-color: #58a6ff;
+            color: #f0f6fc;
+        }
+
+        .btn-github {
+            background: #1c2333;
+            padding: 0.5rem 1.5rem;
+            border-radius: 40px;
+            border: 1px solid #2d333b;
+            color: #f0f6fc;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.2s;
+            margin-top: 0.8rem;
+            text-decoration: none;
+        }
+
+        .btn-github:hover {
+            background: #1f6feb;
+            border-color: #1f6feb;
+            color: #fff;
+        }
+
+        .footer {
+            margin-top: 1.8rem;
+            text-align: center;
+            color: #8b949e;
+            font-size: 0.8rem;
+            border-top: 1px solid #21262d;
+            padding-top: 1.5rem;
+        }
+
+        .footer i {
+            color: #1f6feb;
+        }
+
+        .footer i.fa-heart {
+            color: #f85149;
+        }
+
+        /* ===== RESPONSIVO ===== */
+        @media (max-width: 640px) {
+            .card {
+                padding: 1.2rem;
+            }
+
+            .header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .contato-box {
+                flex-direction: column;
+                align-items: flex-start;
+                border-radius: 20px;
+                padding: 1rem;
+            }
+
+            .grid-projetos {
+                grid-template-columns: 1fr;
+            }
+
+            .lista-estudos li {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+
+            <!-- ===== CABEÇALHO ===== -->
+            <div class="header">
+                <div class="foto">
+                    <img src="https://i.imgur.com/LmLlkp1.jpeg" alt="Pedro Henrique">
+                </div>
+                <div class="header-text">
+                    <h1>Pedro Henrique Cavalcanti</h1>
+                    <span class="tag">👨‍💻 Estudante · Redes</span>
+                    <p><i class="fas fa-map-pin"></i>São Paulo, Brasil</p>
+                </div>
+            </div>
+
+            <!-- ===== SOBRE ===== -->
+            <div class="intro">
+                <p>
+                    <i class="fas fa-quote-left" style="color:#58a6ff; margin-right:6px;"></i>
+                    <strong>Buscando minha primeira oportunidade como Analista de TI, Suporte, Redes ou Dev Júnior.</strong><br>
+                    Experiência em atendimento ao cliente, resolução de problemas e desenvolvimento de projetos próprios.
+                </p>
+            </div>
+
+            <!-- ===== TECNOLOGIAS ===== -->
+            <div class="secao-titulo">
+                <i class="fas fa-code"></i> Tecnologias
+            </div>
+            <div class="tech-grid">
+                <span class="tech-tag"><i class="fab fa-git-alt"></i> Git</span>
+                <span class="tech-tag"><i class="fab fa-github"></i> GitHub</span>
+                <span class="tech-tag"><i class="fab fa-linux"></i> Linux</span>
+                <span class="tech-tag"><i class="fab fa-python"></i> Python</span>
+                <span class="tech-tag"><i class="fas fa-database"></i> SQL</span>
+                <span class="tech-tag"><i class="fab fa-html5"></i> HTML</span>
+                <span class="tech-tag"><i class="fab fa-css3-alt"></i> CSS</span>
+                <span class="tech-tag"><i class="fab fa-salesforce"></i> Salesforce</span>
+            </div>
+
+            <!-- ===== EM FOCO ===== -->
+            <div class="secao-titulo">
+                <i class="fas fa-graduation-cap"></i> 📚 Em foco
+            </div>
+            <ul class="lista-estudos">
+                <li><i class="fas fa-check-circle"></i> Python</li>
+                <li><i class="fas fa-check-circle"></i> SQL</li>
+                <li><i class="fas fa-check-circle"></i> Projetos para portfólio</li>
+                <li><i class="fas fa-check-circle"></i> Linux</li>
+                <li><i class="fas fa-check-circle"></i> Salesforce Trailhead</li>
+            </ul>
+
+            <!-- ===== PROJETO DESTAQUE ===== -->
+            <div class="secao-titulo">
+                <i class="fas fa-star" style="color:#f85149;"></i> ⭐ Destaque
+            </div>
+            <div class="destaque">
+                <span class="badge"><i class="fas fa-crown"></i> Melhor projeto</span>
+                <h3><i class="fas fa-flask"></i> Lab Almeida e Cunha</h3>
+                <p>Site institucional completo para laboratório de análises clínicas. Design responsivo e foco em experiência do usuário.</p>
+                <a href="https://labalmeidaecunha.lovable.app/" target="_blank" class="btn-demo">
+                    <i class="fas fa-external-link-alt"></i> Ver site
+                </a>
+                <a href="https://github.com/Pedroph185" target="_blank" class="link-repo">
+                    <i class="fab fa-github"></i> Código
+                </a>
+            </div>
+
+            <!-- ===== OUTROS PROJETOS ===== -->
+            <div class="secao-titulo">
+                <i class="fas fa-folder-open"></i> 📂 Outros projetos
+            </div>
+            <div class="grid-projetos">
+                <div class="card-projeto">
+                    <h4><i class="fas fa-boxes"></i> Gestão Veterinária</h4>
+                    <p>Inventário com Python e SQL.</p>
+                    <div class="link-git">
+                        <i class="fab fa-github"></i> <a href="https://github.com/Pedroph185/Controle-de-Gest-o-Veterin-ria" target="_blank">Ver projeto</a>
+                    </div>
+                </div>
+
+                <div class="card-projeto">
+                    <h4><i class="fas fa-tasks"></i> Sistema de Tarefas</h4>
+                    <p>Dashboard com Python e GitHub Actions.</p>
+                    <div class="link-git">
+                        <i class="fab fa-github"></i> <a href="https://github.com/Pedroph185/Sistema-tarefas" target="_blank">Ver projeto</a>
+                    </div>
+                </div>
+
+                <div class="card-projeto">
+                    <h4><i class="fas fa-coins"></i> Finanças Pessoais</h4>
+                    <p>Controle com Python e SQL.</p>
+                    <div class="link-git">
+                        <i class="fab fa-github"></i> <a href="https://github.com/Pedroph185/Finan-as" target="_blank">Ver projeto</a>
+                    </div>
+                </div>
+
+                <div class="card-projeto">
+                    <h4><i class="fab fa-whatsapp"></i> WhatsApp Bot</h4>
+                    <p>Bot automatizado com Python.</p>
+                    <div class="link-git">
+                        <i class="fab fa-github"></i> <a href="https://github.com/Pedroph185/whatsapp-bot-pedidos" target="_blank">Ver projeto</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== CONTATO ===== -->
+            <div class="secao-titulo" style="margin-top:1.8rem;">
+                <i class="fas fa-address-card"></i> Contato
+            </div>
+            <div class="contato-box">
+                <span class="contato-item"><i class="fas fa-phone-alt"></i> (11) 94575-8256</span>
+                <span class="contato-item"><i class="fas fa-envelope"></i> wirelesspedro@gmail.com</span>
+                <span class="contato-item"><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/pedro-cavalcanti-23a250334/" target="_blank">LinkedIn</a></span>
+                <span class="contato-item"><i class="fab fa-github"></i> <a href="https://github.com/Pedroph185" target="_blank">Pedroph185</a></span>
+            </div>
+
+            <!-- ===== BOTÃO GITHUB ===== -->
+            <a href="https://github.com/Pedroph185" class="btn-github" target="_blank">
+                <i class="fab fa-github"></i> Ver todos os projetos
+            </a>
+
+            <!-- ===== RODAPÉ ===== -->
+            <div class="footer">
+                <i class="fas fa-code"></i> feito por Pedro Henrique · <i class="fas fa-heart"></i> · 2026
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
