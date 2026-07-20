@@ -109,7 +109,7 @@
         }
 
         /* =============================================
-           INTRODUÇÃO
+           INTRODUÇÃO COM EFEITO DE DIGITAÇÃO
            ============================================= */
         .intro {
             background: #0b0e14;
@@ -118,6 +118,7 @@
             border-left: 4px solid #1f6feb;
             margin-bottom: 2rem;
             transition: 0.3s ease;
+            min-height: 80px;
         }
 
         .intro:hover {
@@ -126,13 +127,37 @@
             transform: translateX(4px);
         }
 
-        .intro p {
-            color: #c9d1d9;
-            font-size: 0.98rem;
+        .intro .digitar-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0 6px;
         }
 
-        .intro strong {
+        .intro .digitar-texto {
+            color: #c9d1d9;
+            font-size: 0.98rem;
+            display: inline;
+        }
+
+        .intro .digitar-texto strong {
             color: #f0f6fc;
+        }
+
+        /* ===== EFEITO DE CURSOR PISCANDO ===== */
+        .cursor {
+            display: inline-block;
+            width: 2px;
+            height: 1.1em;
+            background-color: #58a6ff;
+            margin-left: 2px;
+            animation: piscar 0.7s step-end infinite;
+            vertical-align: text-bottom;
+        }
+
+        @keyframes piscar {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
         }
 
         /* =============================================
@@ -540,6 +565,15 @@
             .lista-estudos li {
                 width: 100%;
             }
+
+            .intro .digitar-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .cursor {
+                height: 0.9em;
+            }
         }
     </style>
 </head>
@@ -555,17 +589,20 @@
                 <div class="header-text">
                     <h1>Pedro Henrique Cavalcanti</h1>
                     <span class="tag">👨‍💻 Estudante · Redes</span>
-                    <p><i class="fas fa-map-pin"></i>São Paulo, Brasil</p>
+                    <p><i class="fas fa-map-pin"></i>Minas Gerais, Brasil</p>
                 </div>
             </div>
 
-            <!-- ===== SOBRE ===== -->
+            <!-- ===== INTRODUÇÃO COM EFEITO DE DIGITAÇÃO ===== -->
             <div class="intro">
-                <p>
-                    <i class="fas fa-quote-left" style="color:#58a6ff; margin-right:6px;"></i>
-                    <strong>Buscando minha primeira oportunidade como Analista de TI, Suporte, Redes ou Dev Júnior.</strong><br>
-                    Experiência em atendimento ao cliente, resolução de problemas e desenvolvimento de projetos próprios.
-                </p>
+                <div class="digitar-container">
+                    <span class="digitar-texto" id="textoAnimado">
+                        <strong>Buscando minha primeira oportunidade como Analista de TI, Suporte, Redes ou Dev Júnior.</strong>
+                        <br>
+                        Experiência em atendimento ao cliente, resolução de problemas e desenvolvimento de projetos próprios.
+                    </span>
+                    <span class="cursor" id="cursor"></span>
+                </div>
             </div>
 
             <!-- ===== TECNOLOGIAS ===== -->
@@ -679,5 +716,38 @@
 
         </div>
     </div>
+
+    <!-- =============================================
+    SCRIPT DO EFEITO DE DIGITAÇÃO
+    ============================================= -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const textoElement = document.getElementById('textoAnimado');
+            const cursorElement = document.getElementById('cursor');
+            const textoCompleto = textoElement.textContent;
+
+            // Esconde o texto e prepara para digitar
+            let textoExibido = '';
+            let index = 0;
+            textoElement.textContent = '';
+
+            function typeWriter() {
+                if (index < textoCompleto.length) {
+                    textoExibido += textoCompleto.charAt(index);
+                    textoElement.textContent = textoExibido;
+                    index++;
+                    // Velocidade variável para simular digitação humana
+                    const delay = textoCompleto.charAt(index - 1) === ' ' ? 30 : 50;
+                    setTimeout(typeWriter, delay);
+                } else {
+                    // Quando terminar, esconde o cursor (opcional)
+                    // cursorElement.style.display = 'none';
+                }
+            }
+
+            // Inicia a digitação após um pequeno atraso
+            setTimeout(typeWriter, 500);
+        });
+    </script>
 </body>
 </html>
