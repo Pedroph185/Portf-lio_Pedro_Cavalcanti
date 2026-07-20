@@ -3,8 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pedro Henrique Cavalcanti · Portfólio</title>
+
+  <!-- ===== TÍTULO PARA SEO ===== -->
+  <title>Pedro Henrique Cavalcanti · Portfólio | Analista de TI</title>
+
+  <!-- ===== META TAGS PARA COMPARTILHAMENTO ===== -->
+  <meta property="og:title" content="Pedro Henrique Cavalcanti · Portfólio">
+  <meta property="og:description" content="Analista de TI | Suporte | Desenvolvedor Júnior">
+  <meta property="og:image" content="https://i.imgur.com/LmLlkp1.jpeg">
+  <meta property="og:url" content="https://pedroph185.github.io/Portf-lio_Pedro_Cavalcanti/">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- ===== FAVICON (ÍCONE NA ABA) ===== -->
+  <link rel="icon" href="https://i.imgur.com/LmLlkp1.jpeg" type="image/jpeg">
+
+  <!-- ===== FONT AWESOME ===== -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
   <style>
     /* ===== RESET ===== */
     * {
@@ -54,7 +69,7 @@
       }
     }
 
-    /* ===== HEADER COM FOTO EM CÍRCULO ===== */
+    /* ===== HEADER ===== */
     .header {
       display: flex;
       flex-wrap: wrap;
@@ -235,7 +250,7 @@
       color: #fff;
     }
 
-    /* ===== LISTAS ===== */
+    /* ===== LISTA "EM FOCO" ===== */
     .study-list {
       list-style: none;
       display: flex;
@@ -362,7 +377,7 @@
       color: #f0f6fc;
     }
 
-    /* ===== CARD DE DESTAQUE (PROJETO PRINCIPAL) ===== */
+    /* ===== CARD DE DESTAQUE ===== */
     .project-highlight {
       background: linear-gradient(145deg, #1f6feb, #0d1117);
       border: 2px solid #1f6feb;
@@ -543,7 +558,7 @@
       transform: rotate(10deg);
     }
 
-    /* ===== BADGE DO LINKEDIN NO FINAL ===== */
+    /* ===== BADGE DO LINKEDIN ===== */
     .linkedin-badge-footer {
       display: flex;
       justify-content: center;
@@ -585,7 +600,32 @@
       transform: rotate(10deg);
     }
 
-    /* ===== RESPONSIVO ===== */
+    /* ===== BOTÃO VOLTAR AO TOPO ===== */
+    #btnTopo {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 30px;
+      z-index: 99;
+      border: none;
+      outline: none;
+      background-color: #1f6feb;
+      color: white;
+      cursor: pointer;
+      padding: 15px;
+      border-radius: 50%;
+      font-size: 18px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(31,111,235,0.3);
+    }
+
+    #btnTopo:hover {
+      background-color: #58a6ff;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 25px rgba(31,111,235,0.5);
+    }
+
+    /* ===== RESPONSIVIDADE ===== */
     @media (max-width: 600px) {
       .card {
         padding: 1.5rem 1rem;
@@ -640,6 +680,13 @@
         min-width: auto;
         width: 100% !important;
       }
+
+      #btnTopo {
+        padding: 12px;
+        font-size: 16px;
+        bottom: 15px;
+        right: 15px;
+      }
     }
   </style>
 </head>
@@ -647,7 +694,7 @@
 <div class="container">
   <div class="card">
 
-    <!-- ===== HEADER COM FOTO EM CÍRCULO ===== -->
+    <!-- ===== HEADER ===== -->
     <div class="header">
       <div class="avatar">
         <img src="https://i.imgur.com/LmLlkp1.jpeg" alt="Pedro Henrique">
@@ -695,11 +742,10 @@
       <li><i class="fas fa-check-circle"></i> Salesforce Trailhead</li>
     </ul>
 
-    <!-- ===== PROJETO EM DESTAQUE (PRINCIPAL) ===== -->
+    <!-- ===== PROJETO EM DESTAQUE ===== -->
     <div class="section-title">
       <i class="fas fa-star" style="color:#f85149;"></i> ⭐ Projeto em Destaque
     </div>
-
     <div class="project-highlight">
       <span class="highlight-badge"><i class="fas fa-crown"></i> Melhor projeto</span>
       <h3><i class="fas fa-flask"></i> Lab Almeida e Cunha</h3>
@@ -714,7 +760,7 @@
       </div>
     </div>
 
-    <!-- ===== PROJETOS EM DESTAQUE ===== -->
+    <!-- ===== OUTROS PROJETOS ===== -->
     <div class="section-title">
       <i class="fas fa-folder-open"></i> 📂 Outros Projetos
     </div>
@@ -727,7 +773,6 @@
           <a href="https://github.com/Pedroph185/Controle-de-Gest-o-Veterin-ria" target="_blank">Ver projeto</a>
         </div>
       </div>
-
       <div class="project-card">
         <h4><i class="fas fa-tasks"></i> Sistema de Tarefas</h4>
         <p>Dashboard interativo para gerenciamento de tarefas.</p>
@@ -736,7 +781,6 @@
           <a href="https://github.com/Pedroph185/Sistema-tarefas" target="_blank">Ver projeto</a>
         </div>
       </div>
-
       <div class="project-card">
         <h4><i class="fas fa-coins"></i> Sistema de Finanças</h4>
         <p>Controle financeiro pessoal com Python e SQL.</p>
@@ -745,7 +789,6 @@
           <a href="https://github.com/Pedroph185/Finan-as" target="_blank">Ver projeto</a>
         </div>
       </div>
-
       <div class="project-card">
         <h4><i class="fab fa-whatsapp"></i> Robozinho WhatsApp BOT</h4>
         <p>Bot automatizado para WhatsApp com Python.</p>
@@ -772,7 +815,7 @@
       <i class="fab fa-github"></i> Ver portfólio no GitHub
     </a>
 
-    <!-- ===== BADGE DO LINKEDIN NO FINAL ===== -->
+    <!-- ===== BADGE DO LINKEDIN ===== -->
     <div class="linkedin-badge-footer">
       <div class="badge-base LI-profile-badge" data-locale="pt_BR" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="pedro-cavalcanti-23a250334" data-version="v1">
         <a class="badge-base__link LI-profile-badge__link" href="https://br.linkedin.com/in/pedro-cavalcanti-23a250334/pt?trk=profile-badge">Pedro Cavalcanti</a>
@@ -786,6 +829,30 @@
 
   </div>
 </div>
+
+<!-- ===== BOTÃO VOLTAR AO TOPO ===== -->
+<button onclick="topFunction()" id="btnTopo" title="Voltar ao topo">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+<!-- ===== SCRIPT DO BOTÃO VOLTAR AO TOPO ===== -->
+<script>
+  // Mostrar/esconder botão ao rolar a página
+  window.onscroll = function() {
+    const btn = document.getElementById("btnTopo");
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      btn.style.display = "block";
+    } else {
+      btn.style.display = "none";
+    }
+  };
+
+  // Função para voltar ao topo
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+</script>
 
 <!-- ===== SCRIPT DO BADGE DO LINKEDIN ===== -->
 <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
