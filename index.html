@@ -92,7 +92,7 @@
         }
 
         /* =============================================
-           CABEÇALHO COM ANIMAÇÃO NO NOME
+           CABEÇALHO
            ============================================= */
         .header {
             display: flex;
@@ -143,7 +143,6 @@
             display: inline-block;
         }
 
-        /* ===== EFEITO DE GRADIENTE E SUBLINHADO NO NOME ===== */
         .header-text h1::after {
             content: '';
             position: absolute;
@@ -257,6 +256,19 @@
             padding-bottom: 0.5rem;
             opacity: 0;
             animation: fadeInUp 0.6s ease 0.6s forwards;
+            position: relative;
+        }
+        
+        /* ===== MELHORIA: Efeito de gradiente no título da seção ===== */
+        .secao-titulo::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(to right, #1f6feb, #58a6ff);
+            border-radius: 2px;
         }
 
         .secao-titulo i {
@@ -383,10 +395,29 @@
             display: block;
             opacity: 0;
             animation: fadeInUp 0.6s ease forwards;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* ===== MELHORIA: Efeito de brilho no hover do card ===== */
+        .destaque-item::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #1f6feb, #58a6ff, #1f6feb);
+            transform: scaleX(0);
+            transition: transform 0.5s ease;
+            transform-origin: left;
+        }
+
+        .destaque-item:hover::before {
+            transform: scaleX(1);
         }
 
         .destaque-item:nth-child(1) { animation-delay: 1.4s; }
         .destaque-item:nth-child(2) { animation-delay: 1.5s; }
+        .destaque-item:nth-child(3) { animation-delay: 1.6s; }
 
         .destaque-item:hover {
             border-color: #58a6ff;
@@ -482,10 +513,10 @@
             animation: fadeInUp 0.5s ease forwards;
         }
 
-        .card-projeto:nth-child(1) { animation-delay: 1.6s; }
-        .card-projeto:nth-child(2) { animation-delay: 1.65s; }
-        .card-projeto:nth-child(3) { animation-delay: 1.7s; }
-        .card-projeto:nth-child(4) { animation-delay: 1.75s; }
+        .card-projeto:nth-child(1) { animation-delay: 1.7s; }
+        .card-projeto:nth-child(2) { animation-delay: 1.75s; }
+        .card-projeto:nth-child(3) { animation-delay: 1.8s; }
+        .card-projeto:nth-child(4) { animation-delay: 1.85s; }
 
         .card-projeto:hover {
             border-color: #58a6ff;
@@ -549,7 +580,7 @@
             margin-top: 1rem;
             transition: 0.3s ease;
             opacity: 0;
-            animation: fadeInUp 0.6s ease 1.8s forwards;
+            animation: fadeInUp 0.6s ease 1.9s forwards;
         }
 
         .contato-box:hover {
@@ -603,7 +634,7 @@
             margin-top: 0.8rem;
             text-decoration: none;
             opacity: 0;
-            animation: fadeInUp 0.6s ease 1.9s forwards;
+            animation: fadeInUp 0.6s ease 2s forwards;
         }
 
         .btn-github i {
@@ -630,7 +661,7 @@
             border-top: 1px solid #21262d;
             padding-top: 1.5rem;
             opacity: 0;
-            animation: fadeInUp 0.6s ease 2s forwards;
+            animation: fadeInUp 0.6s ease 2.1s forwards;
         }
 
         .footer i {
@@ -771,11 +802,11 @@
                     <span class="link-acao">Ver no GitHub <i class="fas fa-arrow-right"></i></span>
                 </a>
 
-                <!-- Projeto 2: Lab Almeida e Cunha -->
-                <a href="https://labalmeidaecunha.lovable.app/" target="_blank" class="destaque-item">
-                    <span class="badge"><i class="fas fa-flask"></i> Melhor projeto</span>
-                    <h3><i class="fas fa-hospital"></i> Lab Almeida e Cunha</h3>
-                    <p>Site institucional completo para um laboratório de análises clínicas. Design responsivo e foco na experiência do usuário.</p>
+                <!-- Projeto 2: Spatyom Produções -->
+                <a href="https://spatyomexperiencias.vercel.app/" target="_blank" class="destaque-item">
+                    <span class="badge"><i class="fas fa-star"></i> Projeto Real</span>
+                    <h3><i class="fas fa-camera"></i> Spatyom Produções</h3>
+                    <p>Site institucional completo para a Coleção Primeira Conquista. Design responsivo, animações e contratação integrada.</p>
                     <span class="link-acao">Ver site ao vivo <i class="fas fa-arrow-right"></i></span>
                 </a>
             </div>
